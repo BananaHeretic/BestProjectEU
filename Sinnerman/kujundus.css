@@ -1,9 +1,19 @@
 @charset "utf-8";
 /* CSS Document */
 body {
-	margin-top:25px;
+
         background-image: url('md.png');
         overflow:hidden;
+}
+#heresy {
+    position: absolute;
+    width: 100px; 
+    height: 100px;    
+    -webkit-animation: spin2 20s infinite linear;
+}
+@-webkit-keyframes spin2 {
+    0%  {-webkit-transform: rotate(0deg);left:0cm;top:0cm;}
+    100% {-webkit-transform: rotate(360deg);left:20cm;top:20cm;}   
 }
 #md{
     -webkit-animation: color-change 1s infinite;

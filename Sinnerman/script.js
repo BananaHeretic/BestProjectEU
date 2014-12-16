@@ -2,7 +2,6 @@
 
 $(document).ready(function () {
     //Muutujad
-
     var nimi = "root@localhost:> ";
     var score = 0;
     var trace = 0;
