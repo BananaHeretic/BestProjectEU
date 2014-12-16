@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <img id="gabe" src="gaben.jpg"alt="Mountain View" style="height:10%;width:10%">
+    <img id="gabe1" src="gaben.jpg"alt="Mountain View" >
     <img id="gabe2" src="gaben.jpg"alt="Mountain View" style="height:10%;width:10%">
     <img id="gabe3" src="gaben.jpg"alt="Mountain View" style="height:10%;width:10%">
     <img id="gabe4" src="gaben.jpg"alt="Mountain View" style="height:10%;width:10%">
@@ -33,17 +33,17 @@
 <div class="col-xs-6 col-sm-5 col-lg-4">
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-lg-4">
-<p class="tekst2" style="display:none;">■ siseveeb.ee</p>
-<p id="abc2" class="description">
+<p class="dosh" style="display:none;">■ swadbank.dosh.ee</p>
+<p id="abc3" class="description">
 Decrypted: No<br/>
 IP: 183.45.634.22
 </p>
 </div>
 <div class="col-xs-4 col-sm-4 col-lg-4">
-<p class="dosh">■ swadbank.dosh.ee</p>
-<p id="abc3" class="description">
+<p class="tekst2"style=>■ dreamhack.edu.ee</p>
+<p id="abc2" class="description">
 Decrypted: No<br/>
-IP: Dreamhack.edu.com
+IP: 88.88.88.88
 </p>
 </div>
 <div class="col-xs-4 col-sm-4 col-lg-4"></div>

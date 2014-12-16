@@ -1,4 +1,5 @@
-aadress = " swadbank.dosh.ee";
+
+
 $(document).ready(function () {
     //Muutujad
 
@@ -27,7 +28,17 @@ $(document).ready(function () {
         // input on võrdne cmd tekstiga
         inpu = $("#command_line").val();
         input = inpu.toLowerCase();
+        aadress = input.replace(/decrypt/gi,"");
+        aadress = aadress.replace(/crack/gi,"");
+        aadress = aadress.replace(/scan/gi,"");
+        aadress = aadress.replace(/connect/gi,"");
+        aadress = aadress.replace(/select/gi,"");
         // Switch mis määrab leveli
+        function decrypt(a,b){
+            $("#placeholder").append("Decrypting ",a,"<br>");
+            setTimeout(function(){$("#placeholder").append("Decrypted ",a, "<br/>");}, b);
+            return;
+        }
         switch (level) {
 
             // switch mis juhtub erinevatel
@@ -39,18 +50,16 @@ $(document).ready(function () {
                     case "gaben":
                         $("#gaben").css({"top": "", "color": "white"});
                         break;
+                        
                     case "switch level":
                         $("body").css("background-color","yellow");
                         $("#info").html("<span id='md' style='font-weight:bold'>FROM: DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot. ok???????? ");
                     case "decrypt swadbank.dosh.ee":
                         $("#placeholder").append(input + "<br>");
                         if (!decrypted) {
-
-                            setTimeout(function () {
-                                $("#placeholder").append("Decrypted swadbank.dosh.ee", "<br/>");
+                                decrypt(aadress,2000);
                                 decrypted = true;
-                            }, 5000);
-                            $("#placeholder").append("Decrypting: swadbank.dosh.ee ", "<br/>");
+
                             score += 1;
                             $('#skoor span').html(score);
                             decrypted = true;
@@ -60,7 +69,6 @@ $(document).ready(function () {
                             $("#placeholder").append("See server on juba decryptitud<br>");
                         }
                         break;
-
 
                     case "crack swadbank.dosh.ee":
                         $("#placeholder").append(input + "<br>");
@@ -77,26 +85,32 @@ $(document).ready(function () {
                             $("#placeholder").append("Can't crack tptlive.ee, maybe try decrypting it first?<br/>");
                         }
                         break;
+                        
                     case "connect swadbank.dosh.ee":
                         if (decrypted&&cracked) {
                         $("#placeholder").append("You are now connected to ", aadress, "<br/>");
-                        $("#placeholder").append("email.txt<br/>");
-                        $("#placeholder").append("creditcardnr.txt<br/>");
-                        $("#placeholder").append("passwords.txt<br/>");
                         $("#placeholder").append("addresses.txt<br/>");
+                        $("#placeholder").append("creditcardnr.txt<br/>");
+                        $("#placeholder").append("email.txt<br/>");
                         $("#placeholder").append("hash2.db<br/>");
                         $("#placeholder").append("hash.db<br/>");
-                        $("#placeholder").append("hash3.db<br/>"); }
-                        else {
-                        $("#placeholder").append("Sul pole decryptitud, poiss.");
+                        $("#placeholder").append("hash3.db<br/>");
+                        $("#placeholder").append("passwords.txt<br/>");}
+                        else if (!cracked) {
+                            $("#placeholder").append("You have already cracked ", aadress, "<br/>");
+                        }
+                        else if (!decrypted) {
+                            $("#placeholder").append("Can't connect to", aadress, "maybe try decrypting it first?<br/>");
                         }
                         break;
+                        
                     case "download email.txt":
                         setTimeout(function () {
                         $("#placeholder").append("This file is encrypted!<br>File downloaded<br>");
                         }, 3000);
                         $("#placeholder").append("Downloading...<br>");
                     break;
+                    
                     case "decrypt email.txt":
                                                     setTimeout(function () {
                         $("#info").html("FROM:admin <br> SUBJECT: raha <br> <br> Koik raha on hash3.db failis. ")
@@ -104,6 +118,7 @@ $(document).ready(function () {
                         }, 1000);
                         
                         break;
+                        
                     case "download hash3.db":
 
 
@@ -115,12 +130,10 @@ $(document).ready(function () {
 
                         break;
 
-
                     case "crack siseveeb.ee":
                         $("#placeholder").append(input + "<br>");
                         if (scanned && !cracked2) {
 
-                            aadress = " siseveeb.ee";
                             setTimeout(function () {
                                 $("#placeholder").append("You have cracked ", aadress, "<br/>")
                                 nimi = "root@siseveeb.ee:> ";
@@ -139,12 +152,10 @@ $(document).ready(function () {
                         }
                         break;
 
-
-
-                    case "scan tptlive.ee":
+                    case "scan dreamhack.edu.ee":
                         if (decrypted && cracked && !scanned) {
-                            $("#placeholder").append("siseveeb.ee appears on the map<br>")
-                            $(".tekst2").fadeIn(1000);
+                            $("#placeholder").append("swadbank.dosh.ee appears on the map<br>")
+                            $(".dosh").fadeIn(1000);
                             scanned = true;
                         }
                         else if (scanned) {
@@ -155,19 +166,13 @@ $(document).ready(function () {
                         else {
                             $("#placeholder").append("Can't scan tptlive.ee, have you decrypted and cracked it?<br>")
                         }
-
                         break;
-
-
-
+                        
                     case "help":
                         $("#placeholder").append(input + "<br>");
                         $("#placeholder").append("This is a list of available commands:<br><table><tr><td>CRACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <td style='font-weight:bold'>Cracks the server</td></tr> <br> <tr><td>DECRYPT&nbsp;&nbsp;</td> <td style='font-weight:bold'>Decrypts the server</td></tr> <br> <tr><td>SCAN</td> <td style='font-weight:bold'>Scans for servers near you</td></tr> <tr><td>CONNECT</td> <td style='font-weight:bold'>Connects to server</td></tr><tr><td>SELECT</td> <td style='font-weight:bold'>Selects a folder</td></tr><br>");
                         break;
-
-
-
-
+                        
                     default:
 
                         $("#placeholder").append(input, " is an unknown command<br/>")

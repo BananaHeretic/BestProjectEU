@@ -184,8 +184,8 @@ body {
 	font-size: 12px;
 	z-index: 100;
 	position:absolute;
-	top: 25px;
-	left: 130px;
+	top: 30px;
+	left: 100px;
 }
 .tekst2:hover + #abc2 {
   opacity: 0.8;
