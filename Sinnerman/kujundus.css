@@ -3,6 +3,7 @@
 body {
 	margin-top:25px;
         background-image: url('md.png');
+        overflow:hidden;
 }
 #md{
     -webkit-animation: color-change 1s infinite;
@@ -40,6 +41,19 @@ body {
     width: 100px; 
     height: 100px;    
     -webkit-animation: spin 4s infinite linear;
+}
+#gabe1 {
+    position: absolute;
+    bottom:-1000px;
+    overflow:hidden;
+    -webkit-animation: myfirst5 5s infinite;
+}
+@-webkit-keyframes myfirst5 {
+0% {bottom:-500px;}
+50% {bottom:0px;left:0px;}
+60%{bottom:0px;left:500px;}
+80%{left:500px;}
+100% {bottom:-500px;left:500px;}
 }
 #gabe {
         position: relative;
