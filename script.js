@@ -1,208 +1,228 @@
+			$(document).ready(function() {
+				//Muutujad
+				
+				var nimi= "root@localhost:> ";
+				var score = 0;
+				var trace = 0;
+				var level = 1;
+				var decrypted = false;
+				var cracked = false;
+				var scanned = false;
+				var cracked2 = false;
+				var cracked3 = false;
+				var run = false;
+				var selected = false;
+				var connected = false;
+				var empty = false;
+				var logout = false;
+				
+				switch(level){
+					case 3:
+					$("#placeholder").prepend('Type "help" to see a list of commands');
+					$("#info").html("FROM: root@decxe.com <br> SUBJECT: Hinded <br> <br> Tere, kukkusin koolis mitmed ained läbi ja kui mu vanemad teada saaks siis nad tapaks mu maha. Kas oleks kuidagi võimalik mu hindeid muuta? Mu nimi on Peeter Mets, õpin Tallinna Polütehnikumis kursusel XD-13");
+					break;
+					case 2:
+					$("#info").html("FROM: root@xdesz.com <br> SUBJECT: Madis <br> <br> Tervä, kukkusin koolis mitmed ained läbi ja kui mu vanemad teada saaks siis nad tapaks mu maha. Kas oleks kuidagi võimalik mu hindeid muuta? Mu nimi on Peeter Mets, õpin Tallinna Polütehnikumis kursusel XD-13");
+					break;
+					case 1:
+					$("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod tühjaks teha!");
+					break;
+				// Kui form submititakse
+				}
+				$("form").submit(function(){
+					
+					// input on võrdne cmd tekstiga
+					inpu = $("#command_line").val();
+					input = inpu.toLowerCase();
+					// Switch mis määrab leveli
+					switch(level){
+						
+					// switch mis juhtub erinevatel
 
+		
+					case 1:
+					switch(input){
 
-$(document).ready(function () {
-    //Muutujad
-    var nimi = "root@localhost:> ";
-    var score = 0;
-    var trace = 0;
-    var level = 1;
-    var decrypted = false;
-    var cracked = false;
-    var scanned = false;
-    var cracked2 = false;
+						case "decrypt valve":
+						$("body").css("background-image","url('gabe.jpg')");
+                        $("#skoor").css("font-color","black");
+						$("#info").css("font-color","black");
+						$("#placeholder").prepend(input + "<br>");
+						if(!decrypted){
+							
+						setTimeout(function(){
+    					$("#placeholder").prepend("Decrypted 95.100.3.235", "<br/>");
+						decrypted = true;
+						}, 100);
+						$("#placeholder").prepend("Decrypting: 95.100.3.235", "<br/>");
+						score+=1;
+						$('#skoor span').html(score);/*		
+							
+							if(trace < 101){
+							progress = setInterval(function () {
+   							$asd = $('.asd');
+							
+    						$asd.text(trace+'%');
+							}, 800);
+							};*/
+						}
+						else{
+							
+							$("#placeholder").prepend("See server on juba decryptitud<br>");
+							}
+						break;
+						
+						
+						case "crack valve":
+						$("#placeholder").prepend(input + "<br>");
+						if (decrypted && !cracked){
+							
+						aadress = "valve";
+						setTimeout(function(){
+						$("#placeholder").prepend("You have cracked ", aadress, "<br/>")
+						nimi = "root@tptlive.ee:> ";
+						}, 1000);
+						cracked = true;
+						trace += 10;
+						}
+						else if(cracked){
+								$("#placeholder").prepend("You have already cracked ", aadress, "<br/>");
+							}
+						
+						
+						
+						else if(!decrypted){
+							$("#placeholder").prepend("Can't crack 95.100.3.235, maybe try decrypting it first?<br/>")
+							}
+						break;
+						
+						
+												
+						
 
-    switch (level) {
-        case 1:
-            $("#placeholder").append('Type "help" to see a list of commands <br>');
-            $("#info").html("<span style='font-weight:bold'>FROM: root@decxe.com</span> <br> SUBJECT: Hinded <br> <br> Tere, kukkusin koolis mitmed ained läbi ja kui mu vanemad teada saaks siis nad tapaks mu maha. Kas oleks kuidagi võimalik mu hindeid muuta? Mu nimi on Peeter Mets, õpin Tallinna Polütehnikumis kursusel XD-13");
-            break;
-        case 2:
-            $("#info").html("FROM: root@xdesz.com <br> SUBJECT: Madis <br> <br> Tervä, kukkusin koolis mitmed ained läbi ja kui mu vanemad teada saaks siis nad tapaks mu maha. Kas oleks kuidagi võimalik mu hindeid muuta? Mu nimi on Peeter Mets, õpin Tallinna Polütehnikumis kursusel XD-13");
-            break;
+						
+						
+						/*Scannimine*/
+						case "scan valve":
+						if(decrypted&&cracked&&!scanned){
+							$("#placeholder").prepend("Steami pank appears on the map<br>")
+							$(".tekst2").fadeIn(1000);
+							scanned = true;
+						}
+						else if(scanned){
+							$("#placeholder").prepend("You have already scanned 95.100.3.235<br>")
+							}
+						
+						
+						else{
+							$("#placeholder").prepend("Can't scan 95.100.3.235, have you decrypted and cracked it?<br>")
+						}
+						
+						break;
+			
+						case "help":
+						$("#placeholder").prepend(input + "<br>");
+						$("#placeholder").prepend("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you<br>");
+						break;
+						
+						case "crack pank":
+						if (!cracked3 && scanned ){
+							
+						aadress = "pank";
+						setTimeout(function(){
+						$("#placeholder").prepend("You have cracked ", aadress, "<br/>")
+						nimi = "root@tptlive.ee:> ";
+						}, 1000);
+						cracked3 = true;
+						trace += 10;
+						}
+						else if(cracked){
+								$("#placeholder").prepend("You have already cracked ", aadress, "<br/>");
+							}
+						
+						
+						
+						else if(!scanned){
+							$("#placeholder").prepend("Sa pead Valve scannima enne Panga crackimist!!<br/>")
+							}
+						break;
+						case "connect pank":
+						$("#placeholder").prepend(input + "<br>");
+							if(cracked3){
+								setTimeout(function(){
+						$("#placeholder").prepend("Connecting...<br>")
+						}, 1000);
+								setTimeout(function(){
+						$("#placeholder").prepend("<br> >>Monies <br> >>CS:GO Servers <br> >>TF2 Servers <br> >>Workers <br> >>Valve Games <br> <br> <br> <br>")
+						}, 2000);
+								connected=true
+								run=true;
+							}
+						break;
+				
+						
+						case "select monies":
+						$("#placeholder").prepend(input + "<br>");
+							if(connected){
+										setTimeout(function(){
+						$("#placeholder").prepend("Selecting...<br>")}, 100);
+								setTimeout(function(){
+						$("#placeholder").prepend("<br> >>Steam Market: 1 000 000 000$ <br> >>Steam Store: 10 000 000$ <br>")
+						}, 2000);
+							}
+								selected=true;
+						break;
+						
+						case "run empty.exe":
+						$("#placeholder").prepend(input + "<br>");
+							if(selected){
+						setTimeout(function(){
+						$("#placeholder").prepend("Emptying.<br>")
+						}, 100);
+						setTimeout(function(){
+						$("#placeholder").prepend("Emptying..<br>")
+						}, 1000);
+						setTimeout(function(){
+						$("#placeholder").prepend("Emptying...<br>")
+						}, 2000);
+								setTimeout(function(){
+						$("#placeholder").prepend("<br> >>Steam Market: 0$ <br> >>Steam Store: 0$ <br>")
+						}, 5000);
+								empty = true;
+							}
+						break;
+						
+						case "logout":
+						$("#placeholder").prepend(input + "<br>");
+							if(connected && empty){
+										setTimeout(function(){
+						$("#placeholder").prepend("Logging out...<br>")
+						}, 100);
+						setTimeout(function(){
+						$("#placeholder").prepend("Logged out!<br>")
+						}, 1000);
+								}
+								
+						logout = true;
+						setTimeout(function(){
+						
+						if(logout){
+						alert("GGWP M80");
+						}}, 2000);
+						break;
+					
+						default:
+						
+						$("#placeholder").prepend(input, " is an unknown command<br/>")
+					
+					}
 
+					$("#command_line").val("");
 
-            // Kui form submititakse
-    }
-    $("form").submit(function () {
-        var objDiv = document.getElementById("placeholder");
-objDiv.scrollTop = objDiv.scrollHeight;
-        // input on võrdne cmd tekstiga
-        inpu = $("#command_line").val();
-        input = inpu.toLowerCase();
-        aadress = input.replace(/decrypt/gi, "");
-        aadress = aadress.replace(/crack/gi, "");
-        aadress = aadress.replace(/scan/gi, "");
-        aadress = aadress.replace(/connect/gi, "");
-        aadress = aadress.replace(/select/gi, "");
-        
-        // Switch mis määrab leveli
-        function decrypt(a, b) {
-            $("#placeholder").append("Decrypting ", a, "<br>");
-            setTimeout(function () {
-                $("#placeholder").append("Decrypted ", a, "<br/>");
-            }, b);
-            return;
-        }
-        function crack(a, b, d, c) {
-            if (c && !d) {
-                setTimeout(function () {
-                    $("#placeholder").append("You have cracked ", a, "<br/>");
-                }, 1000);
-                cracked = true;
-            }
-            else if (c) {
-                $("#placeholder").append("You have already cracked ", a, "<br/>");
-            }
-            else if (!d) {
-                $("#placeholder").append("Can't crack",a, "maybe try decrypting it first?<br/>");
-            }
+	$('.progress-bar').css('width', trace+'%').attr('aria.valuenow', trace);
 
-        }
-        switch (level) {
+					}});
+					
+			});
+			;
 
-            // switch mis juhtub erinevatel
-
-
-
-            case 1:
-                switch (input) {
-                    case "gaben":
-                        $("#gaben").css({"top": "", "color": "white"});
-                        break;
-
-                    case "switch level":
-                        $("body").css("background-color", "yellow");
-                        $("volvo1").css("opacity", "1");
-                        $("volvo2").css("opacity", "1");
-                        $("volvo3").css("opacity", "1");
-                        $("volvo4").css("opacity", "1");
-                        $("gabe").css("opacity", "1");
-                        $("gabe1").css("opacity", "1");
-                        $("gabe2").css("opacity", "1");
-                        $("gabe3").css("opacity", "1");
-                        $("gabe4").css("opacity", "1");
-                        $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
-                    case "decrypt swadbank.dosh.ee":
-                        $("#placeholder").append(input + "<br>");
-                        if (!decrypted) {
-                            decrypt(aadress, 2000);
-                            decrypted = true;
-
-                            score += 1;
-                            $('#skoor span').html(score);
-                            decrypted = true;
-                        }
-                        else {
-
-                            $("#placeholder").append("See server on juba decryptitud<br>");
-                        }
-                        break;
-
-                    case "crack swadbank.dosh.ee":
-                        $("#placeholder").append(input + "<br>");
-                        crack(aadress, 3000, $decrypt, $crack);
-
-                        break;
-
-                    case "connect swadbank.dosh.ee":
-                        if (decrypted && cracked) {
-                            $("#placeholder").append("You are now connected to ", aadress, "<br/>");
-                            $("#placeholder").append("addresses.txt<br/>");
-                            $("#placeholder").append("creditcardnr.txt<br/>");
-                            $("#placeholder").append("email.txt<br/>");
-                            $("#placeholder").append("hash2.db<br/>");
-                            $("#placeholder").append("hash.db<br/>");
-                            $("#placeholder").append("hash3.db<br/>");
-                            $("#placeholder").append("passwords.txt<br/>");
-                        }
-                        else if (!cracked) {
-                            $("#placeholder").append("You have already cracked ", aadress, "<br/>");
-                        }
-                        else if (!decrypted) {
-                            $("#placeholder").append("Can't connect to", aadress, "maybe try decrypting it first?<br/>");
-                        }
-                        break;
-
-                    case "download email.txt":
-                        setTimeout(function () {
-                            $("#placeholder").append("This file is encrypted!<br>File downloaded<br>");
-                        }, 3000);
-                        $("#placeholder").append("Downloading...<br>");
-                        break;
-
-                    case "decrypt email.txt":
-                        setTimeout(function () {
-                            $("#info").html("FROM:admin <br> SUBJECT: raha <br> <br> Koik raha on hash3.db failis. ")
-                            $("#placeholder").append("File decrypted!<br>");
-                        }, 1000);
-
-                        break;
-
-                    case "download hash3.db":
-
-
-                        setTimeout(function () {
-
-                            $("#placeholder").append("This file is encrypted!<br>File downloaded<br>");
-                        }, 3000);
-                        $("#placeholder").append("Downloading...<br>");
-
-                        break;
-
-                    case "crack siseveeb.ee":
-                        $("#placeholder").append(input + "<br>");
-                        if (scanned && !cracked2) {
-
-                            setTimeout(function () {
-                                $("#placeholder").append("You have cracked ", aadress, "<br/>")
-                                nimi = "root@siseveeb.ee:> ";
-                            }, 1000);
-                            cracked2 = true;
-                            trace += 10;
-                        }
-                        else if (cracked2) {
-                            $("#placeholder").append("You have already cracked ", aadress, "<br/>");
-                        }
-
-
-
-                        else if (!scanned) {
-                            $("#placeholder").append("sak mi dik<br/>")
-                        }
-                        break;
-
-                    case "scan dreamhack.edu.ee":
-                        if (decrypted && cracked && !scanned) {
-                            $("#placeholder").append("swadbank.dosh.ee appears on the map<br>")
-                            $(".dosh").fadeIn(1000);
-                            scanned = true;
-                        }
-                        else if (scanned) {
-                            $("#placeholder").append("You have already scanned dreamhack.edu.ee.ee<br>")
-                        }
-
-
-                        else {
-                            $("#placeholder").append("Can't scan dreamhack.edu.ee, have you decrypted and cracked it?<br>")
-                        }
-                        break;
-
-                    case "help":
-                        $("#placeholder").append(input + "<br>");
-                        $("#placeholder").append("This is a list of available commands:<br><table><tr><td>CRACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <td style='font-weight:bold'>Cracks the server</td></tr> <br> <tr><td>DECRYPT&nbsp;&nbsp;</td> <td style='font-weight:bold'>Decrypts the server</td></tr> <br> <tr><td>SCAN</td> <td style='font-weight:bold'>Scans for servers near you</td></tr> <tr><td>CONNECT</td> <td style='font-weight:bold'>Connects to server</td></tr><tr><td>SELECT</td> <td style='font-weight:bold'>Selects a folder</td></tr><br>");
-                        break;
-
-                    default:
-
-                        $("#placeholder").append(input, " is an unknown command<br/>")
-                }
-
-                $("#command_line").val("");
-
-                $('.progress-bar').css('width', trace + '%').attr('aria.valuenow', trace);
-
-        }
-    });
-
-});
-;
