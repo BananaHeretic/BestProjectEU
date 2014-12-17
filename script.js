@@ -10,6 +10,13 @@ $(document).ready(function () {
     var cracked = false;
     var scanned = false;
     var cracked2 = false;
+            function decrypt(a, b) {
+            $("#placeholder").append("Decrypting ", a, "<br>");
+            setTimeout(function () {
+                $("#placeholder").append("Decrypted ", a, "<br/>");
+            }, b);
+            return;
+        }
 
     switch (level) {
         case 1:
@@ -36,13 +43,7 @@ objDiv.scrollTop = objDiv.scrollHeight;
         aadress = aadress.replace(/select/gi, "");
         
         // Switch mis määrab leveli
-        function decrypt(a, b) {
-            $("#placeholder").append("Decrypting ", a, "<br>");
-            setTimeout(function () {
-                $("#placeholder").append("Decrypted ", a, "<br/>");
-            }, b);
-            return;
-        }
+
         function crack(a, b, d, c) {
             if (c && !d) {
                 setTimeout(function () {
@@ -72,16 +73,17 @@ objDiv.scrollTop = objDiv.scrollHeight;
 
                     case "switch level":
                         $("body").css("background-color", "yellow");
-                        $("volvo1").css("opacity", "1");
-                        $("volvo2").css("opacity", "1");
-                        $("volvo3").css("opacity", "1");
-                        $("volvo4").css("opacity", "1");
-                        $("gabe").css("opacity", "1");
-                        $("gabe1").css("opacity", "1");
-                        $("gabe2").css("opacity", "1");
-                        $("gabe3").css("opacity", "1");
-                        $("gabe4").css("opacity", "1");
+                        $("#volvo1").css("visibility", "visible");
+                        $("#volvo2").css("visibility", "visible");
+                        $("#volvo3").css("visibility", "visible");
+                        $("#volvo4").css("visibility", "visible");
+                        $("#gabe").css("visibility", "visible");
+                        $("#gabe1").css("visibility", "visible");
+                        $("#gabe2").css("visibility", "visible");
+                        $("#gabe3").css("visibility", "visible");
+                        $("#gabe4").css("visibility", "visible");
                         $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
+                        break;
                     case "decrypt swadbank.dosh.ee":
                         $("#placeholder").append(input + "<br>");
                         if (!decrypted) {
