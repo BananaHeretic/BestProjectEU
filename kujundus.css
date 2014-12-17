@@ -23,40 +23,50 @@ body {
     animation: color-change 1s infinite;
 }
 #volvo1 {
+        visibility: hidden;
     position: absolute;
    bottom: 50px;
    left:100px;
     width: 100px; 
     height: 100px;    
     -webkit-animation: spin 4s infinite linear;
+
 }
 #volvo2 {
+        visibility: hidden;
     position: absolute;
    bottom: 50px;
    left:1300px;
     width: 100px; 
     height: 100px;    
     -webkit-animation: spin 4s infinite linear;
+
 }
 #volvo3 {
+    visibility: hidden;
     postiton:relative;
     left:1300px;
     width: 100px; 
     height: 100px;    
     -webkit-animation: spin 4s infinite linear;
+    
 }
 #volvo4 {
+    	visibility: hidden;
     position:relative;
    left:1200px;
     width: 100px; 
     height: 100px;    
     -webkit-animation: spin 4s infinite linear;
+    
 }
 #gabe1 {
+    	visibility: hidden;
     position: absolute;
     bottom:-1000px;
     overflow:hidden;
     -webkit-animation: myfirst5 5s infinite;
+    
 }
 @-webkit-keyframes myfirst5 {
 0% {bottom:-500px;}
@@ -66,8 +76,10 @@ body {
 100% {bottom:-500px;left:500px;}
 }
 #gabe {
+    	visibility: hidden;
         position: relative;
     -webkit-animation: myfirst 5s infinite;
+    
     }
 @-webkit-keyframes myfirst {
 0% {left:300px}
@@ -75,8 +87,10 @@ body {
 100% {left: 300px;}
 }
 #gabe2 {
+    	visibility: hidden;
         position: relative;
     -webkit-animation: myfirst 5s infinite;
+    
     }
 @-webkit-keyframes myfirst {
 0% {left:300px}
@@ -84,8 +98,10 @@ body {
 100% {left: 300px;}
 }
 #gabe3 {
+    	visibility: hidden;
         position: relative;
     -webkit-animation: myfirst3 5s infinite;
+    
     }
 @-webkit-keyframes myfirst3 {
 0% {right:0px}
@@ -93,8 +109,10 @@ body {
 100% {right: 00px;}
 }
 #gabe4 {
+    	visibility: hidden;
         position: relative;
     -webkit-animation: myfirst2 5s infinite;
+    
     }
 @-webkit-keyframes myfirst2 {
 0% {top:0px;left:00px}

@@ -16,6 +16,7 @@
 </head>
 
 <body>
+        <img id="gabe1" src="gaben.jpg"alt="Mountain View" >
     <!-- http://stackoverflow.com/questions/16226436/generate-webkit-keyframes-css-dynamically-with-javascript
     -->    <img id="heresy" src="heresy.png"alt="Mountain View">
     <img id="gabe1" src="gaben.jpg"alt="Mountain View" >
