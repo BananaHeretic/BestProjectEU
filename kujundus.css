@@ -1,152 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
 body {
-
-        background-image: url('md.png');
-        overflow:hidden;
+	margin-top:25px;
+		animation: animatedBackground 40s linear infinite;
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
 }
-#heresy {
-    position: absolute;
-    width: 100px; 
-    height: 100px;    
-    -webkit-animation: spin2 20s infinite linear;
-}
-@-webkit-keyframes spin2 {
-    0%  {-webkit-transform: rotate(0deg);left:0cm;top:0cm;}
-    100% {-webkit-transform: rotate(360deg);left:20cm;top:20cm;}   
-}
-#md{
-    -webkit-animation: color-change 1s infinite;
-    -moz-animation: color-change 1s infinite;
-    -o-animation: color-change 1s infinite;
-    -ms-animation: color-change 1s infinite;
-    animation: color-change 1s infinite;
-}
-#volvo1 {
-        visibility: hidden;
-    position: absolute;
-   bottom: 50px;
-   left:100px;
-    width: 100px; 
-    height: 100px;    
-    -webkit-animation: spin 4s infinite linear;
-
-}
-#volvo2 {
-        visibility: hidden;
-    position: absolute;
-   bottom: 50px;
-   left:1300px;
-    width: 100px; 
-    height: 100px;    
-    -webkit-animation: spin 4s infinite linear;
-
-}
-#volvo3 {
-    visibility: hidden;
-    postiton:relative;
-    left:1300px;
-    width: 100px; 
-    height: 100px;    
-    -webkit-animation: spin 4s infinite linear;
-    
-}
-#volvo4 {
-    	visibility: hidden;
-    position:relative;
-   left:1200px;
-    width: 100px; 
-    height: 100px;    
-    -webkit-animation: spin 4s infinite linear;
-    
-}
-#gabe1 {
-    	visibility: hidden;
-    position: absolute;
-    bottom:-1000px;
-    overflow:hidden;
-    -webkit-animation: myfirst5 5s infinite;
-    
-}
-@-webkit-keyframes myfirst5 {
-0% {bottom:-500px;}
-50% {bottom:0px;left:0px;}
-60%{bottom:0px;left:500px;}
-80%{left:500px;}
-100% {bottom:-500px;left:500px;}
-}
-#gabe {
-    	visibility: hidden;
-        position: relative;
-    -webkit-animation: myfirst 5s infinite;
-    
-    }
-@-webkit-keyframes myfirst {
-0% {left:300px}
-50% {left: 1000px;}
-100% {left: 300px;}
-}
-#gabe2 {
-    	visibility: hidden;
-        position: relative;
-    -webkit-animation: myfirst 5s infinite;
-    
-    }
-@-webkit-keyframes myfirst {
-0% {left:300px}
-50% {left: 1000px;}
-100% {left: 300px;}
-}
-#gabe3 {
-    	visibility: hidden;
-        position: relative;
-    -webkit-animation: myfirst3 5s infinite;
-    
-    }
-@-webkit-keyframes myfirst3 {
-0% {right:0px}
-50% {right: 700px;}
-100% {right: 00px;}
-}
-#gabe4 {
-    	visibility: hidden;
-        position: relative;
-    -webkit-animation: myfirst2 5s infinite;
-    
-    }
-@-webkit-keyframes myfirst2 {
-0% {top:0px;left:00px}
-50% {top:300px;left: 00px;}
-100% {left: 00px;top:0px;}
-}
-@-webkit-keyframes spin {
-    0%  {-webkit-transform: rotate(0deg);}
-    100% {-webkit-transform: rotate(360deg);}   
-}
-@-webkit-keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-}
-@-moz-keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-}
-@-ms-keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-}
-@-o-keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-}
-@keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
+@keyframes animatedBackground {
+	0% { background-position: left:0px; }
+	100% { background-position: left:100px; }
 }
 .tekst {
 	font-weight: bold;
@@ -154,40 +16,11 @@ body {
 	font-size: 12px;
 	z-index: 100;
 	position:absolute;
-	top: 45px;
-	left: 120px;
-}
-.dosh {
-	font-weight: bold;
-	text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
-	font-size: 12px;
-	z-index: 100;
-	position:absolute;
-	top: 30px;
-	left: 95px;
-}
-
-#abc3 {
-	opacity: 0;
-	display: block;
-	width: auto;
-	height: 50px;
-	background-color: #8D5B12;
-	border: 3px solid black;
-	border-radius: 10px;
-	padding: 5px;
-	z-index: 100;
-	position:absolute;
-	top:50px;
-	left: 120px;
-	
-
-}
-.dosh:hover + #abc3 {
-  opacity: 0.8;
+	top: 55px;
+	left: 110px;
 }
 .tekst:hover + #abc {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 #abc {
@@ -203,7 +36,7 @@ body {
 	position:absolute;
 	top:70px;
 	left: 90px;
-   
+
 }
 
 .tekst2 {
@@ -212,8 +45,10 @@ body {
 	font-size: 12px;
 	z-index: 100;
 	position:absolute;
-	top: 30px;
-	left: 100px;
+	top: 110px;
+	left: 260px;
+
+
 }
 .tekst2:hover + #abc2 {
   opacity: 0.8;
@@ -230,8 +65,10 @@ body {
 	padding: 5px;
 	z-index: 100;
 	position:absolute;
-	top:50px;
-	left: 120px;
+	top:130px;
+	left: 260px;
+	
+
 	
 
 }
@@ -242,7 +79,7 @@ body {
   font-size: 10px;
   font-family: "Courier New", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
   z-index:101;
-  background-attachment: white;
+  display: block;
 }
 
 #map {
@@ -296,7 +133,6 @@ body {
   -moz-box-shadow: none;
   box-shadow: none;
   position: relative;
-    background: white;
 }
 #skoor {
 	display:block;
@@ -305,7 +141,6 @@ body {
 	display: block;
  	height: auto;
  	max-width: 100%;
-          background-color: white;
 	}
 #info {
 	display:block;
@@ -314,7 +149,7 @@ body {
 	display: block;
  	height: auto;
  	max-width: 100%;
-        background-color: white;
+
 	}
 #placeholder {
 	display:block;
@@ -326,7 +161,6 @@ body {
 	overflow:auto;
 	background-color:#000;
 	color:white;
-            overflow: hidden;
 	}
 .asd {
 	width:250px;
