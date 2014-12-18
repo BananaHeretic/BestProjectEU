@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 1;
+    var level = 5;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -114,7 +114,7 @@ $(document).ready(function () {
             break;
                     case 6:
 
-            document.title = "Level 5 | Hacker Evolution";
+            document.title = "Level 6 | Hacker Evolution";
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
@@ -126,7 +126,7 @@ $(document).ready(function () {
             break;
                     case 7:
 
-            document.title = "Level 6 | Hacker Evolution";
+            document.title = "Level 7 | Hacker Evolution";
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
@@ -138,7 +138,7 @@ $(document).ready(function () {
             break;
                     case 8:
 
-            document.title = "Level 7 | Hacker Evolution";
+            document.title = "Level 8 | Hacker Evolution";
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
@@ -170,7 +170,7 @@ $(document).ready(function () {
             $(".dosh").hide();
             $(".tekst").hide();
             $("#placeholder").append('Type "help" to see a list of commands<br>');
-            $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun v?µta see swadbankist, sest seal pole minul ?ºhtegi kontot.");
+            $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR.Palun v?µta see swadbankist, sest seal pole minul ?ºhtegi kontot.");
             break;
            
     }
@@ -204,31 +204,35 @@ $(document).ready(function () {
         aadress = aadress.replace(/scan/gi, "");
         aadress = aadress.replace(/connect/gi, "");
         aadress = aadress.replace(/select/gi, "");
-        lel = false;
-        hah = false;
 
         // Switch mis m√§√§rab leveli
-        function decrypt(a, b) {
-            tekst("Decrypting ", a, "<br>");
+        function decrypt(a, b, c) {
+            if(!c) { 
+            tekst("Decrypting... "+ a+ "<br>");
             setTimeout(function () {
-                $("#placeholder").append("Decrypted ", a, "<br/>");
+                tekst("Decrypted "+ a+ "<br/>");
+                decrypted = true;
             }, b);
-            $("#command_line").val("");
-            return;
+        }
+        else if(c) {
+            tekst("This server is already decrypted <br>");
+        }
+            
+            return c = true;
         }
 
         function crack(a, b, d, c) {
             if (!c && d) {
                 setTimeout(function () {
-                    tekst("You have cracked ", a, "<br/>");
+                    tekst("You have cracked "+ a + "<br/>");
                 }, b);
                 cracked = true;
             }
             else if (c) {
-                tekst("You have already cracked ", a, "<br/>");
+                tekst("You have already cracked "+ a + "<br/>");
             }
             else if (!d) {
-                tekst("Can't crack", a, " maybe try decrypting it first?<br/>");
+                tekst("Can't crack"+ a + " maybe try decrypting it first?<br/>");
             }
             $("#command_line").val("");
         }
@@ -262,16 +266,9 @@ empty2 = false; //
 switch (input) {
                     case "decrypt tptlive.ee":
                         tekst(input + "<br>");
-                        if (!decrypted) {
-                            setTimeout(function () {
-                                tekst("Decrypted tptlive.ee <br>");
-                                decrypted = true;
-                            }, 1000);
-                            tekst("Decrypting tptlive.ee <br>");
+                        decrypt(aadress,2000,decrypted);
                             score += 1;
                             $('#skoor span').html(score);/*
-                             
-                             
                              if(trace < 101){
                              progress = setInterval(function () {
                              $asd = $('.asd');
@@ -279,11 +276,6 @@ switch (input) {
                              $asd.text(trace+'%');
                              }, 800);
                              };*/
-                        }
-                        else {
-
-                            tekst("See server on juba decryptitud<br>");
-                        }
                         break;
 
 
@@ -588,7 +580,9 @@ switch (input) {
                                 reset();
                                 level += 1;
                                 $("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod t√ºhjaks teha!");
+                                $("body").css("background-image", "url('gabe.jpg')");
                                 $("#placeholder").empty();
+                                
 
                             }
                         }, 2000);
@@ -618,12 +612,10 @@ switch (input) {
                 $('.progress-bar').css('width' + trace + '%').attr('aria.valuenow' + trace);
 
 
-                // switch mis juhtub erinevatel
             case 3:
                 switch (input) {
 
                     case "decrypt valve":
-                        $("body").css("background-image", "url('gabe.jpg')");
                         $("#skoor").css("font-color", "black");
                         $("#info").css("font-color", "black");
                         tekst(input + "<br>");
@@ -674,12 +666,6 @@ switch (input) {
                             tekst("Can't crack 95.100.3.235, maybe try decrypting it first?<br/>");
                         }
                         break;
-
-
-
-
-
-
 
                         /*Scannimine*/
                     case "scan valve":
@@ -807,31 +793,15 @@ switch (input) {
                 $("#command_line").val("");
                 break;
             case 4:
-
-                $("body").css("background-image", "url('md.png')");
-                $("#volvo1").css("visibility", "visible");
-                $("#volvo2").css("visibility", "visible");
-                $("#volvo3").css("visibility", "visible");
-                $("#volvo4").css("visibility", "visible");
-                $("#gabe").css("visibility", "visible");
-                $("#gabe1").css("visibility", "visible");
-                $("#gabe2").css("visibility", "visible");
-                $("#gabe3").css("visibility", "visible");
-                $("#gabe4").css("visibility", "visible");
                 $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun v√µta see swadbankist, sest seal pole minul √ºhtegi kontot.");
                 switch (input) {
                     case "decrypt dreamhack":
                         $("#placeholder").append(input + "<br>");
-                        if (!decrypted) {
-                            decrypt(aadress, 2000);
-                            decrypted = true;
-
+                            decrypt(aadress,2000,decrypted);
                             score += 1;
                             $('#skoor span').html(score);
-                        }
-                        else {
-                            $("#placeholder").append("See server on juba decryptitud<br>");
-                        }
+                        
+
                         break;
                     case "crack dreamhack":
                         $("#placeholder").append(input + "<br>");
@@ -907,7 +877,7 @@ switch (input) {
 
                     case "scan dreamhack":
                         if (decrypted && cracked && !scanned) {
-                            tekst("swadbank.dosh.ee appears on the map<br>");
+                            tekst("swadbank appears on the map<br>");
                             $(".dosh").fadeIn(1000);
                             scanned = true;
                         }
@@ -955,11 +925,72 @@ switch (input) {
                         break;
                         $("#command_line").val("");
                 }
+                    case 5:
+                    switch (input) {
+                    case "decrypt cia":
+                        var cia = aadress.toUpperCase()
+                        decrypt(cia,3000,decrypted);
+                        break;
+                    case "crack cia":
+                        var cia = aadress.toUpperCase()
+                        crack(cia,3000,decrypted,cracked);
+                        break;
+                    case "connect cia":
+                        tekst("Al Qaeda.db<br>G.W.B<br>Obama.db<br>agents.db<br>money.db<br>Easy Bake Oven Manual.pdf<br> ");
+                        break;
+                    case "download obama.db":
+                        setTimeout(function () {
+                            tekst("File Downloaded<br>This file is encrypted.<br>");
+                        }, 3000);
+                        tekst("Downloading...<br>");
+                        break;
+                    case "decrypt obama.db":
+                        decrypt(aadress,2000,false);
+                        break;
+                    case "send file":
+                                                setTimeout(function () {
+                            tekst("File sent!<br>");
+                        }, 1000);
+                        tekst("Sending file..<br>");
+                        break;
+                        case "logout":
+                        tekst(input + "<br>");
+                            setTimeout(function () {
+                                tekst("Logging out...<br>");
+                            }, 100);
+                            setTimeout(function () {
+                                tekst("Logged out!<br>");
+                            }, 1000);
+
+                        logout2 = true;
+                        setTimeout(function () {
+
+                            if (logout2) {
+                                alert("GGWP M80");
+                                reset();
+                                level += 1;
+                                $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun v√µta see swadbankist, sest seal pole minul √ºhtegi kontot.");
+                                $("#placeholder").empty();
+                            }
+                        }, 2000);
+
+                        break;
+                        
+                                            case "help":
+                        tekst(input + "<br>");
+                        tekst("This is a list of available commands:<br><table><tr><td>CRACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <td style='font-weight:bold'>Cracks the server</td></tr> <br> <tr><td>DECRYPT&nbsp;&nbsp;</td> <td style='font-weight:bold'>Decrypts the server</td></tr> <br> <tr><td>SCAN</td> <td style='font-weight:bold'>Scans for servers near you</td></tr> <tr><td>CONNECT</td> <td style='font-weight:bold'>Connects to server</td></tr><tr><td>SELECT</td> <td style='font-weight:bold'>Selects a folder</td></tr><br>");
+                        break;
+                    default:
+                        $("#command_line").val("");
+                        tekst(input + " is an unknown command<br>");
+                        break;
+                        $("#command_line").val("");
+                        
+                }
 
                 $("#command_line").val("");
 
                 $('.progress-bar').css('width', trace + '%').attr('aria.valuenow', trace);
-                break;
         }
     });
 
