@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 3;
+    var level = 4;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -25,6 +25,8 @@ $(document).ready(function () {
     var hasalreadyconnected = false;
     var exploitran = false;
     var logout = false;
+    var injected = false;
+    var run = false;
 
     //Muutujad level 2
     var decrypted2 = false;
@@ -39,6 +41,17 @@ $(document).ready(function () {
     var crackkent = false;
     var dekent = false;
     switch (level) {
+        case 0:
+            document.title = "Level 1 | Hacker Evolution";
+
+            /*      $(".tekst5").hide();
+             $(".tekst4").hide();
+             $(".tekst3").hide();
+             $(".tekst2").show();
+             $(".tekst").show(); */
+            $("#placeholder").append('Type "help" to see a list of commands<br>');
+            $("#info").html("FROM: Ussipoiss@Ussonlahe.ee <br> SUBJECT: REVENGANCE <br><br> Tere, pärast seda kui ma TPT-st välja kukkusin olen ma 101% rage ja tahan revengance");
+            break;
         case 1:
 
             document.title = "Level 1 | Hacker Evolution";
@@ -82,7 +95,11 @@ $(document).ready(function () {
         case 4:
 
             document.title = "Level 4 | Hacker Evolution";
-
+            $(".tekst5").hide();
+            $(".tekst4").hide();
+            $(".tekst3").hide();
+            $(".dosh").show();
+            $(".tekst").hide();  
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
             break;
