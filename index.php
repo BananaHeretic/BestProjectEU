@@ -74,7 +74,8 @@ IP: 82.21.4.400
 </div>
 
 <div class="col-xs-6 col-sm-5 col-lg-2">
-
+<div id="level">
+	Level: </div>
 <div id="skoor">
 	Sinu skoor: <div id="skoor"><span></span></div>
     <p>

@@ -1,12 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
-* {
-    font-family: 'Open Sans', sans-serif;
-	}
 body {
 	margin-top:25px;
     overflow:hidden;
-    background-image:url('');
 }
 @-webkit-keyframes spin2 {
     0%  {-webkit-transform: rotate(0deg);left:0cm;top:0cm;}
@@ -325,6 +321,15 @@ body {
 	display: block;
  	height: auto;
  	max-width: 100%;
+	}
+#level {
+	display:block;
+	border:5px solid purple;
+	padding:20px;
+	display: block;
+ 	height: auto;
+ 	max-width: 100%;
+        margin-bottom: 5px;
 	}
 #info {
 	display:block;
