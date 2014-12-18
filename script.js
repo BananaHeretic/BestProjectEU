@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 1;
+    var level = 2;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -706,6 +706,10 @@ $(document).ready(function () {
 
                             if (logout2) {
                                 alert("GGWP M80");
+                                cracked4 = false;
+                                empty2 = false;
+                                scanned = false;
+                                scanned2 = false;
                                 decrypted2 = false;
                                 cracked2 = false;
                                 cracked3 = false;
@@ -841,6 +845,7 @@ $(document).ready(function () {
                         break;
                     case "logout":
                         tekst(input + "<br>");
+                                        $("#command_line").val("");
                         if (connected2 && empty2) {
                             setTimeout(function () {
                                 tekst("Logging out...<br>")
@@ -855,12 +860,15 @@ $(document).ready(function () {
 
                             if (logout2) {
                                 alert("GGWP M80");
+                                scanned = false;
                                 decrypted2 = false;
-                                cracked2 = false;
-                                cracked3 = false;
+                                cracked = false;
+                                run = false;
+                                injected = false;
                                 level += 1;
                                 $("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod tühjaks teha!");
                                 $("#placeholder").empty();
+                                
                             }
                         }, 2000);
 
@@ -882,6 +890,7 @@ $(document).ready(function () {
                         tekst(input + " is an unknown command<br>");
                         break;
                 }
+                
                 break;
 
                 $("#command_line").val("");

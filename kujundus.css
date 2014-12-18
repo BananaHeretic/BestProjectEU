@@ -344,6 +344,7 @@ body {
 	overflow:auto;
 	background-color:#000;
 	color:white;
+        border-bottom:none;
 	}
 .asd {
 	width:250px;
@@ -449,4 +450,14 @@ body {
 }
 .tekst5:hover + #abc5 {
   opacity: 0.6;
+}
+input {
+    display:block;
+    width:100%;
+    background-color:black;
+    color:#FFF;
+    outline-width: 0;
+    border:5px purple solid;
+    border-top:none;
+    padding:5px;
 }
