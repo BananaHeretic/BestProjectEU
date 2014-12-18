@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 4;
+    var level = 1;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -27,6 +27,8 @@ $(document).ready(function () {
     var logout = false;
     var injected = false;
     var run = false;
+    var dr = false;
+    var dre = false;
 
     //Muutujad level 2
     var decrypted2 = false;
@@ -38,8 +40,6 @@ $(document).ready(function () {
     var run2 = false;
     var selected2 = false;
     var empty2 = false;
-    var crackkent = false;
-    var dekent = false;
     switch (level) {
         case 0:
             document.title = "Level 1 | Hacker Evolution";
@@ -98,8 +98,9 @@ $(document).ready(function () {
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
-            $(".dosh").show();
-            $(".tekst").hide();  
+            $(".dreamhack").show();
+            $(".dosh").hide();
+            $(".tekst").hide();
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
             break;
@@ -134,29 +135,33 @@ $(document).ready(function () {
         aadress = aadress.replace(/scan/gi, "");
         aadress = aadress.replace(/connect/gi, "");
         aadress = aadress.replace(/select/gi, "");
+        lel = false;
+        hah = false;
 
         // Switch mis määrab leveli
         function decrypt(a, b) {
-            $("#placeholder").append("Decrypting ", a, "<br>");
+            tekst("Decrypting ", a, "<br>");
             setTimeout(function () {
                 $("#placeholder").append("Decrypted ", a, "<br/>");
             }, b);
+            $("#command_line").val("");
             return;
         }
+
         function crack(a, b, d, c) {
-            if (c && !d) {
+            if (!c && d) {
                 setTimeout(function () {
-                    $("#placeholder").append("You have cracked ", a, "<br/>");
-                }, 1000);
+                    tekst("You have cracked ", a, "<br/>");
+                }, b);
                 cracked = true;
             }
             else if (c) {
-                $("#placeholder").append("You have already cracked ", a, "<br/>");
+                tekst("You have already cracked ", a, "<br/>");
             }
             else if (!d) {
-                $("#placeholder").append("Can't crack", a, "maybe try decrypting it first?<br/>");
+                tekst("Can't crack", a, " maybe try decrypting it first?<br/>");
             }
-
+            $("#command_line").val("");
         }
 
 
@@ -216,6 +221,7 @@ $(document).ready(function () {
                         else if (!decrypted) {
                             tekst("Can't crack tptlive.ee, maybe try decrypting it first?<br/>")
                         }
+                        $("#command_line").val("");
                         break;
 
                     case "scan tptlive.ee":
@@ -233,7 +239,6 @@ $(document).ready(function () {
                         else {
                             tekst("Can't scan tptlive.ee, have you decrypted and cracked it?<br>")
                         }
-
                         break;
 
 
@@ -255,7 +260,7 @@ $(document).ready(function () {
 
 
                         else if (!scanned) {
-                            tekst("You haven't scanned tptlive.ee")
+                            tekst("You haven't scanned tptlive.ee");
                         }
                         break;
 
@@ -264,10 +269,10 @@ $(document).ready(function () {
                         tekst(input + "<br>");
                         if (cracked2) {
                             setTimeout(function () {
-                                tekst("Connecting<br>")
+                                tekst("Connecting<br>");
                             }, 1000);
                             setTimeout(function () {
-                                tekst("<br>Folders:<br><br>Hinded<br>Puudumised<br>�?ritused<br><br>")
+                                tekst("<br>Folders:<br><br>Hinded<br>Puudumised<br>�?ritused<br><br>");
                             }, 2000);
                             if (!hasalreadyconnected) {
                                 trace = 0;
@@ -284,6 +289,10 @@ $(document).ready(function () {
                             connected = true;
                             hasalreadyconnected = true;
                         }
+                        else if (!cracked2) {
+                            tekst("Please crack the server first.<br>");
+                        }
+                        $("#command_line").val("");
                         break;
 
                     case "select folder hinded":
@@ -301,7 +310,7 @@ $(document).ready(function () {
                         if (connected) {
 
                             setTimeout(function () {
-                                tekst("<br>Õpilase nimi:<br>Ahti Ahtosson<br>Uku Meelis<br>Peeter Mets<br>Uku Võilill<br>")
+                                tekst("<br>Õpilase nimi:<br>Ahti Ahtosson<br>Uku Meelis<br>Peeter Mets<br>Uku Võilill<br>");
                             }, 2000);
                         }
                         break;
@@ -337,10 +346,16 @@ $(document).ready(function () {
                         logout = true;
 
                         if (exploitran && trace < 100 && logout) {
-                            level =+1;
+                            $("#command_line").val("");
+                            level += 1;
+                            scanned = false;
+                            cracked2 = false;
+                            cracked = false;
+                            decrypted = false;
+                            decrypted2 = false;
                             alert("Sa võitsid!");
+                            $("#info").html("FROM: einstein4324@wrftdy.com <br> SUBJECT: NASA <br> <br> Hallo, ich habe ein paar wichtige dokumente für die Forschung von der NASA benötigt. Können Sie helfen? <br><br> TRANSLATION: <br><br> Hello, I need a few important documents for research from NASA. Can you help ?");
                             $("#placeholder").empty();
-                            $("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod tühjaks teha!");
                         }
 
                         break;
@@ -359,7 +374,9 @@ $(document).ready(function () {
                         $("#placeholder").append(input + " is an unknown command<br>");
                         break;
                 }
-break;
+                $("#command_line").val("");
+
+                break;
 
             case 4:
 
@@ -376,7 +393,7 @@ break;
                 $("#gabe4").css("visibility", "visible");
                 $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
                 switch (input) {
-                    case "decrypt swadbank.dosh.ee":
+                    case "decrypt dreamhack":
                         $("#placeholder").append(input + "<br>");
                         if (!decrypted) {
                             decrypt(aadress, 2000);
@@ -388,45 +405,62 @@ break;
                         else {
                             $("#placeholder").append("See server on juba decryptitud<br>");
                         }
-
                         break;
-
-                    case "crack swadbank.dosh.ee":
+                    case "crack dreamhack":
                         $("#placeholder").append(input + "<br>");
-                        crack(aadress, 3000, $decrypt, $crack);
+                        crack(aadress, 3000, dr, dre);
+                        break;
+                    case "decrypt swadbank":
+                        tekst(input + "<br>");
+                        if (!decrypted) {
+                            decrypt(aadress, 2000);
+                            decrypted = true;
+
+                            score += 1;
+                            $('#skoor span').html(score);
+                        }
+                        else {
+                            tekst("See server on juba decryptitud<br>");
+                        }
 
                         break;
 
-                    case "connect swadbank.dosh.ee":
+                    case "crack swadbank":
+                        $("#placeholder").append(input + "<br>");
+                        crack(aadress, 3000, decrypt, crack);
+
+                        break;
+
+                    case "connect swadbank":
                         if (decrypted && cracked) {
-                            $("#placeholder").append("You are now connected to ", aadress, "<br/>");
-                            $("#placeholder").append("addresses.txt<br/>");
-                            $("#placeholder").append("creditcardnr.txt<br/>");
-                            $("#placeholder").append("email.txt<br/>");
-                            $("#placeholder").append("hash2.db<br/>");
-                            $("#placeholder").append("hash.db<br/>");
-                            $("#placeholder").append("hash3.db<br/>");
-                            $("#placeholder").append("passwords.txt<br/>");
+                            tekst("You are now connected to ", aadress, "<br/>");
+                            tekst("addresses.txt<br/>");
+                            tekst("creditcardnr.txt<br/>");
+                            tekst("email.txt<br/>");
+                            tekst("hash2.db<br/>");
+                            tekst("hash.db<br/>");
+                            tekst("hash3.db<br/>");
+                            tekst("passwords.txt<br/>");
                         }
                         else if (!cracked) {
-                            $("#placeholder").append("You have already cracked ", aadress, "<br/>");
+                            tekst("You have already cracked ", aadress, "<br/>");
                         }
                         else if (!decrypted) {
-                            $("#placeholder").append("Can't connect to", aadress, "maybe try decrypting it first?<br/>");
+                            tekst("Can't connect to", aadress, "maybe try decrypting it first?<br/>");
                         }
                         break;
 
                     case "download email.txt":
                         setTimeout(function () {
-                            $("#placeholder").append("This file is encrypted!<br>File downloaded<br>");
+                            tekst("This file is encrypted!<br>File downloaded<br>");
                         }, 3000);
-                        $("#placeholder").append("Downloading...<br>");
+                        tekst("Downloading...<br>");
                         break;
 
                     case "decrypt email.txt":
                         setTimeout(function () {
                             $("#info").html("FROM:admin <br> SUBJECT: raha <br> <br> Koik raha on hash3.db failis. ")
-                            $("#placeholder").append("File decrypted!<br>");
+                            tekst("File decrypted!<br>");
                         }, 1000);
 
                         break;
@@ -436,39 +470,64 @@ break;
 
                         setTimeout(function () {
 
-                            $("#placeholder").append("This file is encrypted!<br>File downloaded<br>");
+                            tekst("This file is encrypted!<br>File downloaded<br>");
                         }, 3000);
-                        $("#placeholder").append("Downloading...<br>");
+                        tekst("Downloading...<br>");
 
                         break;
 
 
 
-                    case "scan dreamhack.edu.ee":
+                    case "scan dreamhack":
                         if (decrypted && cracked && !scanned) {
-                            $("#placeholder").append("swadbank.dosh.ee appears on the map<br>")
+                            tekst("swadbank.dosh.ee appears on the map<br>")
                             $(".dosh").fadeIn(1000);
                             scanned = true;
                         }
                         else if (scanned) {
-                            $("#placeholder").append("You have already scanned dreamhack.edu.ee.ee<br>")
+                            tekst("You have already scanned dreamhack<br>")
                         }
 
 
                         else {
-                            $("#placeholder").append("Can't scan dreamhack.edu.ee, have you decrypted and cracked it?<br>")
+                            tekst("Can't scan , have you decrypted and cracked it?<br>")
                         }
                         break;
+                    case "logout":
+                        tekst(input + "<br>");
+                        if (connected2 && empty2) {
+                            setTimeout(function () {
+                                tekst("Logging out...<br>")
+                            }, 100);
+                            setTimeout(function () {
+                                tekst("Logged out!<br>")
+                            }, 1000);
+                        }
 
+                        logout2 = true;
+                        setTimeout(function () {
+
+                            if (logout2) {
+                                alert("GGWP M80");
+                                decrypted2 = false;
+                                cracked2 = false;
+                                cracked3 = false;
+                                level += 1;
+                                $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> You have completed this game.");
+                                $("#placeholder").empty();
+                            }
+                        }, 2000);
+
+                        break;
                     case "help":
-                        $("#placeholder").append(input + "<br>");
-                        $("#placeholder").append("This is a list of available commands:<br><table><tr><td>CRACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <td style='font-weight:bold'>Cracks the server</td></tr> <br> <tr><td>DECRYPT&nbsp;&nbsp;</td> <td style='font-weight:bold'>Decrypts the server</td></tr> <br> <tr><td>SCAN</td> <td style='font-weight:bold'>Scans for servers near you</td></tr> <tr><td>CONNECT</td> <td style='font-weight:bold'>Connects to server</td></tr><tr><td>SELECT</td> <td style='font-weight:bold'>Selects a folder</td></tr><br>");
+                        tekst(input + "<br>");
+                        tekst("This is a list of available commands:<br><table><tr><td>CRACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <td style='font-weight:bold'>Cracks the server</td></tr> <br> <tr><td>DECRYPT&nbsp;&nbsp;</td> <td style='font-weight:bold'>Decrypts the server</td></tr> <br> <tr><td>SCAN</td> <td style='font-weight:bold'>Scans for servers near you</td></tr> <tr><td>CONNECT</td> <td style='font-weight:bold'>Connects to server</td></tr><tr><td>SELECT</td> <td style='font-weight:bold'>Selects a folder</td></tr><br>");
                         break;
                     default:
                         $("#command_line").val("");
-                        $("#placeholder").append(input + " is an unknown command<br>");
+                        tekst(input + " is an unknown command<br>");
                         break;
-
+                        $("#command_line").val("");
                 }
 
                 $("#command_line").val("");
@@ -647,16 +706,22 @@ break;
 
                             if (logout2) {
                                 alert("GGWP M80");
+                                decrypted2 = false;
+                                cracked2 = false;
+                                cracked3 = false;
+                                level += 1;
+                                $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
+                                $("#placeholder").empty();
                             }
                         }, 2000);
 
                         break;
-            default:
-                $("#placeholder").append(input + " is an unknown command<br>");
+                    default:
+                        tekst(input + " is an unknown command<br>");
 
-                $('.progress-bar').css('width', trace + '%').attr('aria.valuenow', trace);
-        
-                break;
+                        $('.progress-bar').css('width', trace + '%').attr('aria.valuenow', trace);
+
+                        break;
 
                 }
                 $("#command_line").val("");
@@ -670,7 +735,7 @@ break;
                     case "decrypt" + decryptstring:
                         if (decryptstring == " nasa.gov") {
 
-                            $("#placeholder").append(nimi + input + "<br>");
+                            tekst(nimi + input + "<br>");
                             $("#command_line").val("");
                             if (!decrypted) {
 
@@ -689,13 +754,13 @@ break;
                         }
                         else if ((decryptstring.trim(input)).length == 0) {
                             $("#command_line").val("");
-                            $("#placeholder").append(nimi + input + "<br>");
-                            $("#placeholder").append("You didn't enter anything <br>");
+                            tekst(nimi + input + "<br>");
+                            tekst("You didn't enter anything <br>");
                         }
                         else {
                             $("#command_line").val("");
-                            $("#placeholder").append(nimi + input + "<br>");
-                            $("#placeholder").append("Can't decrypt " + decryptstring + "<br>");
+                            tekst(nimi + input + "<br>");
+                            tekst("Can't decrypt " + decryptstring + "<br>");
                         }
                         break;
 
@@ -703,37 +768,37 @@ break;
                     case "crack" + crackstring:
                         if (crackstring == " nasa.gov") {
                             $("#command_line").val("");
-                            $("#placeholder").append(nimi + input + "<br>");
+                            tekst(nimi + input + "<br>");
                             if (decrypted && !cracked) {
 
                                 aadress = " nasa.gov";
                                 setTimeout(function () {
-                                    $("#placeholder").append("You have cracked " + aadress + "<br/>")
+                                    tekst("You have cracked " + aadress + "<br/>")
 
                                     nimi = "root@nasa.gov:> ";
                                 }, 1000);
                                 cracked = true;
                             }
                             else if (cracked) {
-                                $("#placeholder").append("You have already cracked " + aadress + "<br/>");
+                                tekst("You have already cracked " + aadress + "<br/>");
                             }
                             else if (!decrypted) {
-                                $("#placeholder").append("Can't crack nasa.gov, maybe try decrypting it first?<br/>")
+                                tekst("Can't crack nasa.gov, maybe try decrypting it first?<br/>")
                             }
                         }
                         else if ((crackstring.trim(input)).length == 0) {
                             $("#command_line").val("");
-                            $("#placeholder").append("You didn't enter anything <br>");
+                            tekst("You didn't enter anything <br>");
                         }
                         else {
                             $("#command_line").val("");
-                            $("#placeholder").append("Can't crack " + crackstring + "<br>");
+                            tekst("Can't crack " + crackstring + "<br>");
                         }
                         break;
 
                     case "inject docs.exe":
                         $("#command_line").val("");
-                        $("#placeholder").append(nimi + input + "<br>");
+                        tekst(nimi + input + "<br>");
                         if (decrypted && cracked && !injected) {
 
                             setTimeout(function () {
@@ -754,42 +819,69 @@ break;
 
                     case "run docs.exe":
                         $("#command_line").val("");
-                        $("#placeholder").append(nimi + input + "<br>");
+                        tekst(nimi + input + "<br>");
                         if (decrypted && cracked && injected && !run) {
 
                             setTimeout(function () {
-                                $("#placeholder").append("You ran docs.exe<br>")
+                                $("#placeholder").append("You ran docs.exe<br>");
+                                decrypted = false;
+                                cracked = false;
                             }, 1000);
                             run = true;
                         }
                         else if (run) {
-                            $("#placeholder").append("You have already ran the file<br>")
+                            tekst("You have already ran the file<br>")
                         }
 
 
                         else {
-                            $("#placeholder").append("Can't run the file, have you injected it?<br>")
+                            tekst("Can't run the file, have you injected it?<br>")
                         }
 
                         break;
+                    case "logout":
+                        tekst(input + "<br>");
+                        if (connected2 && empty2) {
+                            setTimeout(function () {
+                                tekst("Logging out...<br>")
+                            }, 100);
+                            setTimeout(function () {
+                                tekst("Logged out!<br>")
+                            }, 1000);
+                        }
 
+                        logout2 = true;
+                        setTimeout(function () {
+
+                            if (logout2) {
+                                alert("GGWP M80");
+                                decrypted2 = false;
+                                cracked2 = false;
+                                cracked3 = false;
+                                level += 1;
+                                $("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod tühjaks teha!");
+                                $("#placeholder").empty();
+                            }
+                        }, 2000);
+
+                        break;
                     case "help":
-                        $("#placeholder").append(nimi + input + "<br>");
-                        $("#placeholder").append("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you <br> INJECT - Injects the specified file to the server <br> RUN - Runs the specified file<br>");
+                        tekst(nimi + input + "<br>");
+                        tekst("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you <br> INJECT - Injects the specified file to the server <br> RUN - Runs the specified file<br>");
                         $("#command_line").val("");
                         break;
 
                     case "help":
-                        $("#placeholder").prepend(nimi + input + "<br>");
-                        $("#placeholder").prepend("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you <br> INJECT - Injects the specified file to the server <br> RUN - Runs the specified file<br> SELECT - Selects a specified item<br>LOGOUT - Ends the current session<br>");
+                        tekst(nimi + input + "<br>");
+                        tekst("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you <br> INJECT - Injects the specified file to the server <br> RUN - Runs the specified file<br> SELECT - Selects a specified item<br>LOGOUT - Ends the current session<br>");
                         $("#command_line").val("");
                         break;
 
                     default:
                         $("#command_line").val("");
-                        $("#placeholder").prepend(input + " is an unknown command<br>");
+                        tekst(input + " is an unknown command<br>");
                         break;
-                } 
+                }
                 break;
 
                 $("#command_line").val("");

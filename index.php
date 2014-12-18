@@ -36,8 +36,13 @@ IP: 183.45.634.22
 Decrypted: Yes<br/>
 IP: 193.40.160.10
 </p>
-<p class="dosh">■ swadbank.dosh.ee</p>
+<p class="dosh">■ Swadbank</p>
 <p id="dosh" class="description">
+Decrypted: Yes<br/>
+IP: swadbank.dosh.ee
+</p>
+<p class="dreamhack">■ Dreamhack</p>
+<p id="dreamhack" class="description">
 Decrypted: Yes<br/>
 IP: 193.40.160.10
 </p>
