@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 3;
+    var level = 2;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -43,11 +43,11 @@ $(document).ready(function () {
 
             document.title = "Level 1 | Hacker Evolution";
 
-      /*      $(".tekst5").hide();
-            $(".tekst4").hide();
-            $(".tekst3").hide();
-            $(".tekst2").show();
-            $(".tekst").show(); */
+            /*      $(".tekst5").hide();
+             $(".tekst4").hide();
+             $(".tekst3").hide();
+             $(".tekst2").show();
+             $(".tekst").show(); */
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: root@decxe.com <br> SUBJECT: Hinded <br> <br> Tere, kukkusin koolis mitmed ained läbi ja kui mu vanemad teada saaks siis nad tapaks mu maha. Kas oleks kuidagi võimalik mu hindeid muuta? Mu nimi on Peeter Mets, õpin Tallinna Polütehnikumis kursusel XD-13");
             break;
@@ -79,13 +79,13 @@ $(document).ready(function () {
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod tühjaks teha!");
             break;
-                    case 4:
+        case 4:
 
             document.title = "Level 4 | Hacker Evolution";
 
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
-                break;
+            break;
     }
 
     // level 3
@@ -150,199 +150,200 @@ $(document).ready(function () {
 
 
         switch (level) {
-                                                case 1:
+            case 1:
                 switch (input) {
-						case "decrypt tptlive.ee":
-						tekst(input + "<br>");
-						if(!decrypted){
-						setTimeout(function(){
-						tekst("Decrypted tptlive.ee <br>");
-						decrypted = true;
-						}, 1000);
-						tekst("Decrypting tptlive.ee <br>");
-							score+=1;
-							$('#skoor span').html(score);/*
-							
-							
-							if(trace < 101){
-							progress = setInterval(function () {
-   							$asd = $('.asd');
-							
-    						$asd.text(trace+'%');
-							}, 800);
-							};*/
-						}
-						else{
-							
-							tekst("See server on juba decryptitud<br>");
-							}
-						break;
-						
-						
-						case "crack tptlive.ee":
-						tekst(input + "<br>");
-						if (decrypted && !cracked){
-							
-						aadress = " tptlive.ee";
-						setTimeout(function(){
-						tekst("You have cracked " +  aadress +  "<br/>")
-						nimi = "root@tptlive.ee:> ";
-						}, 1000);
-						cracked = true;
-						}
-						else if(cracked){
-								tekst("You have already cracked " +  aadress + "<br/>");
-							}
-						
-						
-						
-						else if(!decrypted){
-							tekst("Can't crack tptlive.ee, maybe try decrypting it first?<br/>")
-							}
-						break;
-						
-						case "scan tptlive.ee":
-						tekst(input + "<br>");
-						if(decrypted&&cracked&&!scanned){
-							tekst("siseveeb.ee appears on the map<br>")
-							$(".tekst2").fadeIn(1000);
-							scanned = true;
-						}
-						else if(scanned){
-							tekst("You have already scanned tptlive.ee<br>")
-							}
-						
-						
-						else{
-							tekst("Can't scan tptlive.ee, have you decrypted and cracked it?<br>")
-						}
-						
-						break;
+                    case "decrypt tptlive.ee":
+                        tekst(input + "<br>");
+                        if (!decrypted) {
+                            setTimeout(function () {
+                                tekst("Decrypted tptlive.ee <br>");
+                                decrypted = true;
+                            }, 1000);
+                            tekst("Decrypting tptlive.ee <br>");
+                            score += 1;
+                            $('#skoor span').html(score);/*
+                             
+                             
+                             if(trace < 101){
+                             progress = setInterval(function () {
+                             $asd = $('.asd');
+                             
+                             $asd.text(trace+'%');
+                             }, 800);
+                             };*/
+                        }
+                        else {
+
+                            tekst("See server on juba decryptitud<br>");
+                        }
+                        break;
 
 
-						case "crack siseveeb.ee":
-						tekst(input + "<br>");
-						if (scanned && !cracked2){
-							
-						aadress = " siseveeb.ee";
-						setTimeout(function(){
-						tekst("You have cracked " + aadress + ". You can now connect.<br/>")
-						nimi = "root@siseveeb.ee:> ";
-						}, 1000);
-						cracked2 = true;
-						}
-						else if(cracked2){
-								tekst("You have already cracked " + aadress + "<br/>");
-							}
-						
-						
-						
-						else if(!scanned){
-							tekst("You haven't scanned tptlive.ee")
-							}
-						break;
+                    case "crack tptlive.ee":
+                        tekst(input + "<br>");
+                        if (decrypted && !cracked) {
+
+                            aadress = " tptlive.ee";
+                            setTimeout(function () {
+                                tekst("You have cracked " + aadress + "<br/>")
+                                nimi = "root@tptlive.ee:> ";
+                            }, 1000);
+                            cracked = true;
+                        }
+                        else if (cracked) {
+                            tekst("You have already cracked " + aadress + "<br/>");
+                        }
 
 
-						case "connect siseveeb.ee":
-						tekst(input + "<br>");
-							if(cracked2){
-								setTimeout(function(){
-						tekst("Connecting<br>")
-						}, 1000);
-								setTimeout(function(){
-						tekst("<br>Folders:<br><br>Hinded<br>Puudumised<br>�?ritused<br><br>")
-						}, 2000);
-						if (!hasalreadyconnected){
-							trace=0;
-								}
-								uih=setInterval(function(){
- 								trace+=2;
- 								
- 								$('.progress-bar').css('width', trace+'%').attr('aria.valuenow', trace);
- 								if(trace==100){
- 								tekst("SA KAOTASID!!!");
- 								}
-								}, 1000);
-								
-								connected=true;
-								hasalreadyconnected=true;
-							}
-						break;
 
-						case "select folder hinded":
-						tekst(input + "<br>");
-							if(connected){
-								
-								setTimeout(function(){
-						tekst("<br>Kursus:<br>XD-13<br>XD-14<br>SE-12<br>SE-13<br>VV-14<br>")
-						}, 2000);
-							}
-						break;
+                        else if (!decrypted) {
+                            tekst("Can't crack tptlive.ee, maybe try decrypting it first?<br/>")
+                        }
+                        break;
 
-						case "select xd-13":
-						tekst(input + "<br>");
-							if(connected){
-								
-								setTimeout(function(){
-						tekst("<br>Õpilase nimi:<br>Ahti Ahtosson<br>Uku Meelis<br>Peeter Mets<br>Uku Võilill<br>")
-						}, 2000);
-							}
-						break;	
+                    case "scan tptlive.ee":
+                        tekst(input + "<br>");
+                        if (decrypted && cracked && !scanned) {
+                            tekst("siseveeb.ee appears on the map<br>")
+                            $(".tekst2").fadeIn(1000);
+                            scanned = true;
+                        }
+                        else if (scanned) {
+                            tekst("You have already scanned tptlive.ee<br>")
+                        }
 
 
-						case "select peeter mets":
-						tekst(input + "<br>");
-							if(connected){
-								folderstudent=true;
-								setTimeout(function(){
-						tekst("<br> Hinded: Peeter Mets<br>Eesti keel: 2 <br> Matemaatika: 2 <br> Praktika: 3 <br> Kehaline Kasvatus: 4 <br> Keemia: 2<br>")
-						}, 2000);
-							}
-						break;
+                        else {
+                            tekst("Can't scan tptlive.ee, have you decrypted and cracked it?<br>")
+                        }
 
-						case "run exploit":
-						tekst(input + "<br>");
-							if(folderstudent){
-								
-								setTimeout(function(){
-						tekst("<br> Hinded: Peeter Mets<br>Eesti keel: 5 <br> Matemaatika: 5 <br> Praktika: 5 <br> Kehaline Kasvatus: 5 <br> Keemia: 5<br>")
-						}, 2000);
-						exploitran=true;
-							}
-						break;	
+                        break;
 
-						case "logout":
-						tekst(input + "<br>");
-							if(connected){
-								connected=false;
-								clearInterval(uih);
-							}
-							logout = true;
 
-						if(exploitran&&trace<100&&logout){
-							level = 2;
-							alert("Sa võitsid!");
-							$( "#placeholder" ).empty();
-												$("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod tühjaks teha!");
-							}
+                    case "crack siseveeb.ee":
+                        tekst(input + "<br>");
+                        if (scanned && !cracked2) {
 
-						break;	
-						
-						case "help":
-						tekst(input + "<br>");
-						tekst("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you<br>");
-						break;
+                            aadress = " siseveeb.ee";
+                            setTimeout(function () {
+                                tekst("You have cracked " + aadress + ". You can now connect.<br/>")
+                                nimi = "root@siseveeb.ee:> ";
+                            }, 1000);
+                            cracked2 = true;
+                        }
+                        else if (cracked2) {
+                            tekst("You have already cracked " + aadress + "<br/>");
+                        }
+
+
+
+                        else if (!scanned) {
+                            tekst("You haven't scanned tptlive.ee")
+                        }
+                        break;
+
+
+                    case "connect siseveeb.ee":
+                        tekst(input + "<br>");
+                        if (cracked2) {
+                            setTimeout(function () {
+                                tekst("Connecting<br>")
+                            }, 1000);
+                            setTimeout(function () {
+                                tekst("<br>Folders:<br><br>Hinded<br>Puudumised<br>�?ritused<br><br>")
+                            }, 2000);
+                            if (!hasalreadyconnected) {
+                                trace = 0;
+                            }
+                            uih = setInterval(function () {
+                                trace += 2;
+
+                                $('.progress-bar').css('width', trace + '%').attr('aria.valuenow', trace);
+                                if (trace == 100) {
+                                    tekst("SA KAOTASID!!!");
+                                }
+                            }, 1000);
+
+                            connected = true;
+                            hasalreadyconnected = true;
+                        }
+                        break;
+
+                    case "select folder hinded":
+                        tekst(input + "<br>");
+                        if (connected) {
+
+                            setTimeout(function () {
+                                tekst("<br>Kursus:<br>XD-13<br>XD-14<br>SE-12<br>SE-13<br>VV-14<br>")
+                            }, 2000);
+                        }
+                        break;
+
+                    case "select xd-13":
+                        tekst(input + "<br>");
+                        if (connected) {
+
+                            setTimeout(function () {
+                                tekst("<br>Õpilase nimi:<br>Ahti Ahtosson<br>Uku Meelis<br>Peeter Mets<br>Uku Võilill<br>")
+                            }, 2000);
+                        }
+                        break;
+
+
+                    case "select peeter mets":
+                        tekst(input + "<br>");
+                        if (connected) {
+                            folderstudent = true;
+                            setTimeout(function () {
+                                tekst("<br> Hinded: Peeter Mets<br>Eesti keel: 2 <br> Matemaatika: 2 <br> Praktika: 3 <br> Kehaline Kasvatus: 4 <br> Keemia: 2<br>")
+                            }, 2000);
+                        }
+                        break;
+
+                    case "run exploit":
+                        tekst(input + "<br>");
+                        if (folderstudent) {
+
+                            setTimeout(function () {
+                                tekst("<br> Hinded: Peeter Mets<br>Eesti keel: 5 <br> Matemaatika: 5 <br> Praktika: 5 <br> Kehaline Kasvatus: 5 <br> Keemia: 5<br>")
+                            }, 2000);
+                            exploitran = true;
+                        }
+                        break;
+
+                    case "logout":
+                        tekst(input + "<br>");
+                        if (connected) {
+                            connected = false;
+                            clearInterval(uih);
+                        }
+                        logout = true;
+
+                        if (exploitran && trace < 100 && logout) {
+                            level =+1;
+                            alert("Sa võitsid!");
+                            $("#placeholder").empty();
+                            $("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod tühjaks teha!");
+                        }
+
+                        break;
 
                     case "help":
                         tekst(input + "<br>");
                         tekst("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you<br>");
                         break;
-                        							default:
-							$("#command_line").val("");
-							$("#placeholder").append(input + " is an unknown command<br>");
-						}
-						break;
-                
+
+                    case "help":
+                        tekst(input + "<br>");
+                        tekst("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you<br>");
+                        break;
+                    default:
+                        $("#command_line").val("");
+                        $("#placeholder").append(input + " is an unknown command<br>");
+                        break;
+                }
+break;
+
             case 4:
 
 
@@ -366,12 +367,11 @@ $(document).ready(function () {
 
                             score += 1;
                             $('#skoor span').html(score);
-                            decrypted = true;
                         }
                         else {
-
                             $("#placeholder").append("See server on juba decryptitud<br>");
                         }
+
                         break;
 
                     case "crack swadbank.dosh.ee":
@@ -447,10 +447,10 @@ $(document).ready(function () {
                         $("#placeholder").append(input + "<br>");
                         $("#placeholder").append("This is a list of available commands:<br><table><tr><td>CRACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <td style='font-weight:bold'>Cracks the server</td></tr> <br> <tr><td>DECRYPT&nbsp;&nbsp;</td> <td style='font-weight:bold'>Decrypts the server</td></tr> <br> <tr><td>SCAN</td> <td style='font-weight:bold'>Scans for servers near you</td></tr> <tr><td>CONNECT</td> <td style='font-weight:bold'>Connects to server</td></tr><tr><td>SELECT</td> <td style='font-weight:bold'>Selects a folder</td></tr><br>");
                         break;
-                        							default:
-							$("#command_line").val("");
-							$("#placeholder").append(input + " is an unknown command<br>");
-
+                    default:
+                        $("#command_line").val("");
+                        $("#placeholder").append(input + " is an unknown command<br>");
+                        break;
 
                 }
 
@@ -634,16 +634,16 @@ $(document).ready(function () {
                         }, 2000);
 
                         break;
-
-
-                }
-               							default:
-							$("#command_line").val("");
-							$("#placeholder").append(input + " is an unknown command<br>");
+            default:
+                $("#placeholder").append(input + " is an unknown command<br>");
 
                 $('.progress-bar').css('width', trace + '%').attr('aria.valuenow', trace);
-
+        
                 break;
+
+                }
+                break;
+
 
 
 
@@ -760,21 +760,22 @@ $(document).ready(function () {
                         $("#placeholder").append("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you <br> INJECT - Injects the specified file to the server <br> RUN - Runs the specified file<br>");
                         $("#command_line").val("");
                         break;
- 										
-							case "help":
-							$("#placeholder").prepend(nimi + input + "<br>");
-							$("#placeholder").prepend("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you <br> INJECT - Injects the specified file to the server <br> RUN - Runs the specified file<br> SELECT - Selects a specified item<br>LOGOUT - Ends the current session<br>");
-							$("#command_line").val("");
-							break;
-							
-							default:
-							$("#command_line").val("");
-							$("#placeholder").prepend(input + " is an unknown command<br>");
-						}
-						break;
 
-					$("#command_line").val("");
-					$('.progress-bar').css('width' + trace+'%').attr('aria.valuenow' + trace);
+                    case "help":
+                        $("#placeholder").prepend(nimi + input + "<br>");
+                        $("#placeholder").prepend("This is a list of available commands:<br>CRACK - Cracks the server <br> DECRYPT - Decrypts the server <br> SCAN - Scans for servers near you <br> INJECT - Injects the specified file to the server <br> RUN - Runs the specified file<br> SELECT - Selects a specified item<br>LOGOUT - Ends the current session<br>");
+                        $("#command_line").val("");
+                        break;
+
+                    default:
+                        $("#command_line").val("");
+                        $("#placeholder").prepend(input + " is an unknown command<br>");
+                        break;
+                } 
+                break;
+
+                $("#command_line").val("");
+                $('.progress-bar').css('width' + trace + '%').attr('aria.valuenow' + trace);
         }
     });
 
