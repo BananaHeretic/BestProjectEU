@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 2;
+    var level = 3;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -496,7 +496,7 @@ break;
 
                     case "crack valve":
                         tekst(input + "<br>");
-                        if (decrypted2 && !cracked2) {
+                        if (decrypted2 && !cracked3) {
 
                             aadress2 = "valve";
                             setTimeout(function () {
@@ -506,7 +506,7 @@ break;
                             cracked3 = true;
                             trace += 10;
                         }
-                        else if (cracked2) {
+                        else if (cracked3) {
                             tekst("You have already cracked " + aadress2 + "<br/>");
                         }
 
@@ -642,6 +642,7 @@ break;
                 break;
 
                 }
+                $("#command_line").val("");
                 break;
 
 
