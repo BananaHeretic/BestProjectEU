@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 8;
+    var level = 6;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -1106,10 +1106,10 @@ switch (input) {
                         $("#command_line").val("");
                         tekst(input + " is an unknown command<br>");
                         break;
-                        $("#command_line").val("");
-                        
-                        
                 }
+                $("#command_line").val("");
+                break;   
+                
                                     case 7: //Kim Jong
                     switch (input) {
                     case "decrypt sony":
