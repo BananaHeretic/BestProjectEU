@@ -3,6 +3,8 @@
 body {
 	margin-top:25px;
     overflow:hidden;
+            
+
 }
 @-webkit-keyframes spin2 {
     0%  {-webkit-transform: rotate(0deg);left:0cm;top:0cm;}
@@ -321,6 +323,7 @@ body {
 	display: block;
  	height: auto;
  	max-width: 100%;
+        background-color:white;
 	}
 #level {
 	display:block;
@@ -332,8 +335,10 @@ body {
         margin-bottom: 5px;
         font-size:20px;
         font-weight:bold;
+        background-color:white;
 	}
 #info {
+        background-color:white;
 	display:block;
 	border:5px solid purple;
 	padding:20px;

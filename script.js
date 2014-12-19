@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 6;
+    var level = 7;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -128,6 +128,7 @@ $(".NASA").hide();
                     case 5:
 
             document.title = "Level 5 | Hacker Evolution";
+            $("body").css("background-image", "url('cia.png')");
             $(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").hide();
@@ -157,7 +158,9 @@ $(".NASA").hide();
              $(".NSA").show();
              $(".SONY").hide();
              $(".GRU").hide();
-            
+             
+             
+            $("body").css("background-image", "url('nsa.png')");
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ee</span> <br> SUBJECT: NSA <br> <br> Hello i would like all NSA documents.");
             break;
@@ -175,7 +178,9 @@ $(".NASA").hide();
              $(".NSA").hide();
              $(".SONY").show();
              $(".GRU").hide();
-            
+             
+             
+            $("body").css("background-image","url('leader.jpg')");
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>KimJongUn@BestKorea.kr</span> <br> SUBJECT: URGENT <br> <br> Hello, I glorious leader would like you to leak Sony's servers")
             break;
@@ -628,7 +633,7 @@ switch (input) {
                         setTimeout(function () {
 
                             if (logout2) {
-                                alert("GGWP M80");
+                                alert("Mission Complete");
                                 reset();
                                 level += 1;
                                 $("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod tühjaks teha!");
@@ -664,7 +669,7 @@ switch (input) {
                 $('.progress-bar').css('width' + trace + '%').attr('aria.valuenow' + trace);
 
 
-            case 3:
+            case 3://valve
                 switch (input) {
 
                     case "decrypt valve":
@@ -825,7 +830,7 @@ switch (input) {
                         setTimeout(function () {
 
                             if (logout2) {
-                                alert("GGWP M80");
+                                alert("Mission Complete");
                                 reset();
                                 level += 1;
                                 $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
@@ -957,12 +962,13 @@ switch (input) {
                         setTimeout(function () {
 
                             if (logout2) {
-                                alert("GGWP M80");
+                                alert("Mission Complete");
                                 reset();
 
                                 level += 1;
-            $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ee</span> <br> SUBJECT: NSA <br> <br> Hello i would like all NSA documents.");
+            $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ru</span> <br> SUBJECT: CIA <br> <br> Tere, mina soovin CIA-st k�ik Obama-ga seotud dokumenid saada. ")
             $("#placeholder").empty();
+            $("body").css("background-image", "url('cia.png')");
                             }
                         }, 2000);
 
@@ -984,6 +990,7 @@ switch (input) {
 
 
                     case 5: //CIA
+                                                        $("body").css("background-image", "url('cia.png')");
                     switch (input) {
                     case "decrypt cia":
                         var cia = aadress.toUpperCase()
@@ -1024,7 +1031,7 @@ switch (input) {
                         setTimeout(function () {
 
                             if (logout2) {
-                                alert("GGWP M80");
+                                alert("Mission Complete");
                                 reset();
                                 level += 1;
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ee</span> <br> SUBJECT: NSA <br> <br> Hello i would like all NSA documents.");
@@ -1088,9 +1095,10 @@ switch (input) {
                         setTimeout(function () {
 
                             if (logout2) {
-                                alert("GGWP M80");
+                                alert("Mission Complete");
                                 reset();
                                 level += 1;
+            $("body").css("background-image","url('leader.jpg')");
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>KimJongUn@BestKorea.kr</span> <br> SUBJECT: URGENT <br> <br> Hello, I glorious leader would like you to leak Sony's servers")
             $("#placeholder").empty();
                             }
@@ -1148,7 +1156,7 @@ switch (input) {
                         setTimeout(function () {
 
                             if (logout2) {
-                                alert("GGWP M80");
+                                alert("Mission Complete");
                                 reset();
                                 level += 1;
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>Amoba@HeSueOhWit.com</span> <br> SUBJECT: GRU <br> <br> Hello, i would like to get all documents relating to Vladimir Putin from the GRU servers.");
@@ -1214,11 +1222,12 @@ switch (input) {
                         setTimeout(function () {
 
                             if (logout2) {
-                                alert("GGWP M80");
+                                alert("Mission Complete");
                                 reset();
                                 level += 1;
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ee</span> <br> SUBJECT: NSA <br> <br> Hello i would like all NSA documents.");
             $("#placeholder").empty();
+            $("body").css("background-image", "url('nsa.png')");
                             }
                         }, 2000);
 
