@@ -1037,6 +1037,7 @@ switch (input) {
                                 alert("Mission Complete");
                                 reset();
                                 level += 1;
+                                $("body").css("background-image", "url('nsa.png')");
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ee</span> <br> SUBJECT: NSA <br> <br> Hello i would like all NSA documents.");
             $("#placeholder").empty();
                             }
