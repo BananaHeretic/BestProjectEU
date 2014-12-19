@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 5;
+    var level = 6;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -378,7 +378,7 @@ switch (input) {
                         if (connected) {
 
                             setTimeout(function () {
-                                tekst("<br>Kursus:<br>XD-13<br>XD-14<br>SE-12<br>SE-13<br>VV-14<br>")
+                                tekst("<br>Kursus:<br>XD-13<br>XD-14<br>SE-12<br>SE-13<br>VV-14<br>");
                             }, 2000);
                         }
                         break;
@@ -792,10 +792,10 @@ switch (input) {
                 }
                 $("#command_line").val("");
                 break;
-            case 4:
+            case 4://swadbank
                 $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
                 switch (input) {
-                    case "decrypt dreamhack":
+                    case "decrypt worldbank":
                         $("#placeholder").append(input + "<br>");
                             decrypt(aadress,2000,decrypted);
                             score += 1;
@@ -803,7 +803,7 @@ switch (input) {
                         
 
                         break;
-                    case "crack dreamhack":
+                    case "crack worldbank":
                         $("#placeholder").append(input + "<br>");
                         crack(aadress, 3000, decrypted, cracked);
                         break;
@@ -833,7 +833,7 @@ switch (input) {
                             tekst("You are now connected to ", aadress, "<br/>");
                             tekst("addresses.txt<br/>");
                             tekst("creditcardnr.txt<br/>");
-                            tekst("email.txt<br/>");
+                            tekst("readme.txt<br/>");
                             tekst("hash2.db<br/>");
                             tekst("hash.db<br/>");
                             tekst("hash3.db<br/>");
@@ -847,7 +847,7 @@ switch (input) {
                         }
                         break;
 
-                    case "download email.txt":
+                    case "download readme.txt":
                         setTimeout(function () {
                             tekst("This file is encrypted!<br>File downloaded<br>");
                         }, 3000);
@@ -875,14 +875,14 @@ switch (input) {
 
 
 
-                    case "scan dreamhack":
+                    case "scan worldbank":
                         if (decrypted && cracked && !scanned) {
                             tekst("swadbank appears on the map<br>");
                             $(".dosh").fadeIn(1000);
                             scanned = true;
                         }
                         else if (scanned) {
-                            tekst("You have already scanned dreamhack<br>");
+                            tekst("You have already scanned worldbank<br>");
                         }
 
 
@@ -909,8 +909,8 @@ switch (input) {
                                 reset();
 
                                 level += 1;
-                                $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> You have completed this game.");
-                                $("#placeholder").empty();
+            $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ee</span> <br> SUBJECT: NSA <br> <br> Hello i would like all NSA documents.");
+            $("#placeholder").empty();
                             }
                         }, 2000);
 
@@ -925,7 +925,7 @@ switch (input) {
                         break;
                         $("#command_line").val("");
                 }
-                    case 5:
+                    case 5: //CIA
                     switch (input) {
                     case "decrypt cia":
                         var cia = aadress.toUpperCase()
@@ -969,8 +969,8 @@ switch (input) {
                                 alert("GGWP M80");
                                 reset();
                                 level += 1;
-                                $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
-                                $("#placeholder").empty();
+            $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ee</span> <br> SUBJECT: NSA <br> <br> Hello i would like all NSA documents.");
+            $("#placeholder").empty();
                             }
                         }, 2000);
 
@@ -985,6 +985,190 @@ switch (input) {
                         tekst(input + " is an unknown command<br>");
                         break;
                         $("#command_line").val("");
+                        
+                        
+                }
+                    case 6: //NSA
+                    switch (input) {
+                    case "decrypt nsa":
+                        var nsa = aadress.toUpperCase()
+                        decrypt(nsa,3000,decrypted);
+                        break;
+                    case "crack nsa":
+                        var nsa = aadress.toUpperCase()
+                        crack(nsa,3000,decrypted,cracked);
+                        break;
+                    case "connect nsa":
+                        tekst("all_NSA_documents.zip<br>Snowden.zip<br>Obama.db<br>agents.db<br>money.db<br> ");
+                        break;
+                    case "download all_NSA_documents.zip":
+                        setTimeout(function () {
+                            tekst("File Downloaded<br>This file is encrypted.<br>");
+                        }, 3000);
+                        tekst("Downloading...<br>");
+                        break;
+                    case "send file":
+                                                setTimeout(function () {
+                            tekst("File sent!<br>");
+                        }, 1000);
+                        tekst("Sending file..<br>");
+                        break;
+                        case "logout":
+                        tekst(input + "<br>");
+                            setTimeout(function () {
+                                tekst("Logging out...<br>");
+                            }, 100);
+                            setTimeout(function () {
+                                tekst("Logged out!<br>");
+                            }, 1000);
+
+                        logout2 = true;
+                        setTimeout(function () {
+
+                            if (logout2) {
+                                alert("GGWP M80");
+                                reset();
+                                level += 1;
+            $("#info").html("FROM: <span id='md' style='font-weight:bold'>KimJongUn@BestKorea.kr</span> <br> SUBJECT: URGENT <br> <br> Hello, I glorious leader would like you to leak Sony's servers")
+            $("#placeholder").empty();
+                            }
+                        }, 2000);
+
+                        break;
+                        
+                                            case "help":
+                        tekst(input + "<br>");
+                        tekst("This is a list of available commands:<br><table><tr><td>CRACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <td style='font-weight:bold'>Cracks the server</td></tr> <br> <tr><td>DECRYPT&nbsp;&nbsp;</td> <td style='font-weight:bold'>Decrypts the server</td></tr> <br> <tr><td>SCAN</td> <td style='font-weight:bold'>Scans for servers near you</td></tr> <tr><td>CONNECT</td> <td style='font-weight:bold'>Connects to server</td></tr><tr><td>SELECT</td> <td style='font-weight:bold'>Selects a folder</td></tr><br>");
+                        break;
+                    default:
+                        $("#command_line").val("");
+                        tekst(input + " is an unknown command<br>");
+                        break;
+                        $("#command_line").val("");
+                        
+                        
+                }
+                                    case 7: //Kim Jong
+                    switch (input) {
+                    case "decrypt sony":
+                        var cia = aadress.toUpperCase()
+                        decrypt(cia,3000,decrypted);
+                        break;
+                    case "crack sony":
+                        var cia = aadress.toUpperCase()
+                        crack(cia,3000,decrypted,cracked);
+                        break;
+                    case "connect sony":
+                        tekst("emails.zip<br>movies.zip<br>everythingelse.zip<br>agents.db<br>money.db<br>");
+                        break;
+                    case "download all":
+                        setTimeout(function () {
+                            tekst("File Downloaded<br>");
+                        }, 3000);
+                        tekst("Downloading...<br>");
+                        break;
+                    case "leak files":
+                                                setTimeout(function () {
+                            tekst("Files leaked!<br>");
+                        }, 1000);
+                        tekst("Leaking Files...<br>");
+                        break;
+                        case "logout":
+                        tekst(input + "<br>");
+                            setTimeout(function () {
+                                tekst("Logging out...<br>");
+                            }, 100);
+                            setTimeout(function () {
+                                tekst("Logged out!<br>");
+                            }, 1000);
+
+                        logout2 = true;
+                        setTimeout(function () {
+
+                            if (logout2) {
+                                alert("GGWP M80");
+                                reset();
+                                level += 1;
+            $("#info").html("FROM: <span id='md' style='font-weight:bold'>Amoba@HeSueOhWit.com</span> <br> SUBJECT: GRU <br> <br> Hello, i would like to get all documents relating to Vladimir Putin from the GRU servers.");
+            $("#placeholder").empty();
+                            }
+                        }, 2000);
+
+                        break;
+                        
+                                            case "help":
+                        tekst(input + "<br>");
+                        tekst("This is a list of available commands:<br><table><tr><td>CRACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <td style='font-weight:bold'>Cracks the server</td></tr> <br> <tr><td>DECRYPT&nbsp;&nbsp;</td> <td style='font-weight:bold'>Decrypts the server</td></tr> <br> <tr><td>SCAN</td> <td style='font-weight:bold'>Scans for servers near you</td></tr> <tr><td>CONNECT</td> <td style='font-weight:bold'>Connects to server</td></tr><tr><td>SELECT</td> <td style='font-weight:bold'>Selects a folder</td></tr><br>");
+                        break;
+                    default:
+                        $("#command_line").val("");
+                        tekst(input + " is an unknown command<br>");
+                        break;
+                        $("#command_line").val("");
+                        
+                        
+                }
+                    case 8: //GRU
+                    switch (input) {
+                    case "decrypt gru":
+                        var gru = aadress.toUpperCase()
+                        decrypt(gru,3000,decrypted);
+                        break;
+                    case "crack cia":
+                        var gru = gru.toUpperCase()
+                        crack(cia,3000,decrypted,cracked);
+                        break;
+                    case "connect cia":
+                        tekst("Putin.db<br>Obama.db<br>agents.db<br>money.db<br>Easy Bake Oven Manual.pdf<br> ");
+                        break;
+                    case "download putin.db":
+                        setTimeout(function () {
+                            tekst("File Downloaded<br>This file is encrypted.<br>");
+                        }, 3000);
+                        tekst("Downloading...<br>");
+                        break;
+                    case "decrypt putin.db":
+                        decrypt(aadress,2000,false);
+                        break;
+                    case "send file":
+                                                setTimeout(function () {
+                            tekst("File sent!<br>");
+                        }, 1000);
+                        tekst("Sending file..<br>");
+                        break;
+                        case "logout":
+                        tekst(input + "<br>");
+                            setTimeout(function () {
+                                tekst("Logging out...<br>");
+                            }, 100);
+                            setTimeout(function () {
+                                tekst("Logged out!<br>");
+                            }, 1000);
+
+                        logout2 = true;
+                        setTimeout(function () {
+
+                            if (logout2) {
+                                alert("GGWP M80");
+                                reset();
+                                level += 1;
+            $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ee</span> <br> SUBJECT: NSA <br> <br> Hello i would like all NSA documents.");
+            $("#placeholder").empty();
+                            }
+                        }, 2000);
+
+                        break;
+                        
+                                            case "help":
+                        tekst(input + "<br>");
+                        tekst("This is a list of available commands:<br><table><tr><td>CRACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <td style='font-weight:bold'>Cracks the server</td></tr> <br> <tr><td>DECRYPT&nbsp;&nbsp;</td> <td style='font-weight:bold'>Decrypts the server</td></tr> <br> <tr><td>SCAN</td> <td style='font-weight:bold'>Scans for servers near you</td></tr> <tr><td>CONNECT</td> <td style='font-weight:bold'>Connects to server</td></tr><tr><td>SELECT</td> <td style='font-weight:bold'>Selects a folder</td></tr><br>");
+                        break;
+                    default:
+                        $("#command_line").val("");
+                        tekst(input + " is an unknown command<br>");
+                        break;
+                        $("#command_line").val("");
+                        
                         
                 }
 

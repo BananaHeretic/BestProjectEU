@@ -38,13 +38,12 @@ IP: 193.40.160.10
 </p>
 <p class="dosh">■ Swadbank</p>
 <p id="dosh" class="description">
-Decrypted: Yes<br/>
-IP: swadbank.dosh.ee
+IP: 98.139.134.99
 </p>
-<p class="dreamhack">■ Dreamhack</p>
+<p class="dreamhack">■ World Bank</p>
 <p id="dreamhack" class="description">
-Decrypted: Yes<br/>
-IP: 193.40.160.10
+Location: USA, Washington D.C <br/>
+IP: 68.142.243.103
 </p>
 <p class="tekst3">■ nasa.gov</p>
 <p id="abc3" class="description">
