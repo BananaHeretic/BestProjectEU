@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 4;
+    var level = 8;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -287,7 +287,6 @@ $(".NASA").hide();
             else if (!d) {
                 tekst("Can't crack"+ a + " maybe try decrypting it first?<br/>");
             }
-            $("#command_line").val("");
         }
         function reset() {
 decrypted = false; // Level 1
@@ -848,7 +847,7 @@ switch (input) {
             case 4://swadbank
                 $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
                 switch (input) {
-                    case "decrypt worldbank":
+                    case "decrypt world bank":
                         $("#placeholder").append(input + "<br>");
                             decrypt(aadress,2000,decrypted);
                             score += 1;
@@ -856,7 +855,7 @@ switch (input) {
                         
 
                         break;
-                    case "crack worldbank":
+                    case "crack world bank":
                         $("#placeholder").append(input + "<br>");
                         crack(aadress, 3000, decrypted, cracked);
                         break;
@@ -976,8 +975,14 @@ switch (input) {
                         $("#command_line").val("");
                         tekst(input + " is an unknown command<br>");
                         break;
-                        $("#command_line").val("");
                 }
+                $("#command_line").val("");
+                break;
+
+                $("#command_line").val("");
+                $('.progress-bar').css('width' + trace + '%').attr('aria.valuenow' + trace);
+
+
                     case 5: //CIA
                     switch (input) {
                     case "decrypt cia":
@@ -1037,10 +1042,14 @@ switch (input) {
                         $("#command_line").val("");
                         tekst(input + " is an unknown command<br>");
                         break;
-                        $("#command_line").val("");
-                        
-                        
                 }
+                $("#command_line").val("");
+                break;
+
+                $('.progress-bar').css('width' + trace + '%').attr('aria.valuenow' + trace);
+
+    
+                
                     case 6: //NSA
                     switch (input) {
                     case "decrypt nsa":
@@ -1157,10 +1166,13 @@ switch (input) {
                         $("#command_line").val("");
                         tekst(input + " is an unknown command<br>");
                         break;
-                        $("#command_line").val("");
-                        
-                        
                 }
+                $("#command_line").val("");
+                break;
+
+                $('.progress-bar').css('width' + trace + '%').attr('aria.valuenow' + trace);
+
+
                     case 8: //GRU
                     switch (input) {
                     case "decrypt gru":
@@ -1220,14 +1232,14 @@ switch (input) {
                         $("#command_line").val("");
                         tekst(input + " is an unknown command<br>");
                         break;
-                        $("#command_line").val("");
-                        
                         
                 }
+                $("#command_line").val("");
+                break;
 
                 $("#command_line").val("");
+                $('.progress-bar').css('width' + trace + '%').attr('aria.valuenow' + trace);
 
-                $('.progress-bar').css('width', trace + '%').attr('aria.valuenow', trace);
         }
     });
 
