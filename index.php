@@ -14,7 +14,7 @@
 </head>
 
 <body onload="trace()">
-
+<img src="gaben.jpg"id="gabe1">
 <!-- See alustab bootstrapi rea -->
 <div class="row">
 <!-- Teen tühja divi mille laius on 3 (bootstrap koosneb 12 osast, ehk siis algusest on 3/12 tühjust)-->

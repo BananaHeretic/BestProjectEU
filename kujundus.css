@@ -3,7 +3,7 @@
 body {
 	margin-top:25px;
     overflow:hidden;
-            
+    background-image:url("md.png");
 
 }
 @-webkit-keyframes spin2 {
@@ -58,17 +58,15 @@ body {
 #gabe1 {
     	visibility: hidden;
     position: absolute;
-    bottom:-1000px;
     overflow:hidden;
-    -webkit-animation: myfirst5 5s infinite;
+    bottom:-220px;
     
 }
 @-webkit-keyframes myfirst5 {
-0% {bottom:-500px;}
-50% {bottom:0px;left:0px;}
-60%{bottom:0px;left:500px;}
-80%{left:500px;}
-100% {bottom:-500px;left:500px;}
+0% {bottom:-220px;}
+50% {bottom:0px;}
+95% {bottom:0px;}
+100% {bottom:-220px;}
 }
 #gabe {
     	visibility: hidden;

@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 7;
+    var level = 3;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -673,6 +673,8 @@ switch (input) {
                 switch (input) {
 
                     case "decrypt valve":
+                        $("#gabe1").css("visibility", "visible");
+                        $("#gabe1").css("-webkit-animation", "myfirst5 30s  linear");
                         $("#skoor").css("font-color", "black");
                         $("#info").css("font-color", "black");
                         tekst(input + "<br>");
