@@ -90,7 +90,7 @@ $(".NASA").show();
 
             document.title = "Level 3 | Hacker Evolution";
 
-$(".NASA").hide();
+            $(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").show();
             $(".tekst3").hide();
@@ -730,7 +730,7 @@ switch (input) {
                     case "scan valve":
                         if (decrypted && cracked && !scanned) {
                             tekst("Steami pank appears on the map<br>");
-                            $(".tekst2").fadeIn(1000);
+                            $(".tekst5").fadeIn(1000);
                             scanned2 = true;
                         }
                         else if (scanned) {
@@ -835,6 +835,7 @@ switch (input) {
                                 alert("Mission Complete");
                                 reset();
                                 level += 1;
+                        $("#gabe1").css("visibility", "hidden");
                                 $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun võta see swadbankist, sest seal pole minul ühtegi kontot.");
                                 $("#placeholder").empty();
                             }
@@ -1189,11 +1190,11 @@ switch (input) {
                         var gru = aadress.toUpperCase()
                         decrypt(gru,3000,decrypted);
                         break;
-                    case "crack cia":
+                    case "crack gru":
                         var gru = gru.toUpperCase()
                         crack(cia,3000,decrypted,cracked);
                         break;
-                    case "connect cia":
+                    case "connect gru":
                         tekst("Putin.db<br>Obama.db<br>agents.db<br>money.db<br>Easy Bake Oven Manual.pdf<br> ");
                         break;
                     case "download putin.db":
@@ -1247,6 +1248,235 @@ switch (input) {
                 }
                 $("#command_line").val("");
                 break;
+                		case 9:
+						switch(input){
+							case "decrypt 86.123.35.1":
+                        tekst(input + "<br>");
+                        if (!decrypted) {
+							$("#command_line").val("");
+                            setTimeout(function () {
+                                tekst("Decrypted 86.123.35.1" + "<br/>");
+                                decrypted = true;
+                            }, 100);
+                            tekst("Decrypting: 86.123.35.1" + "<br/>");
+                            score += 1;
+                            $('#skoor span').html(score);/*		
+                             
+                             if(trace < 101){
+                             progress = setInterval(function () {
+                             $asd = $('.asd');
+                             
+                             $asd.text(trace+'%');
+                             }, 800);
+                             };*/
+                        }
+						else{
+							tekst("See server on juba decrypteeritud <br>")
+						}
+						break;
+						
+						 case "crack 86.123.35.1":
+                        tekst(input + "<br>");
+                        if (decrypted && !cracked) {
+							$("#command_line").val("");
+                            aadress2 = "86.123.35.1";
+                            setTimeout(function () {
+                                tekst("You have cracked " + aadress2 + "<br/>");
+                                nimi = "root@tptlive.ee:> ";
+                            }, 1000);
+                            cracked = true;
+                            trace += 10;
+                        }
+                        else if (cracked) {
+                            tekst("You have already cracked " + aadress2 + "<br/>");
+                        }
+
+
+
+                        else if (!decrypted) {
+                            tekst("Can't crack 95.100.3.235, maybe try decrypting it first?<br/>");
+                        }
+                        break;
+						
+						case "connect 86.123.35.1":
+                        tekst(input + "<br>");
+                        if (cracked) {
+						$("#command_line").val("");
+                            setTimeout(function () {
+                                tekst("Connecting<br>");
+                            }, 1000);
+                            setTimeout(function () {
+                                tekst("<br>Welcome to 86.123.35.1 Admin <br> Please enter a command !:");
+                            }, 2000);
+                            if (!hasalreadyconnected) {
+                                trace = 0;
+                            }
+							/*
+                            uih = setInterval(function () {
+                                trace += 2;
+
+                                $('.progress-bar').css('width', trace + '%').attr('aria.valuenow', trace);
+                                if (trace == 100) {
+                                    tekst("SA KAOTASID!!!");
+                                }
+                            }, 1000);
+*/
+                            connected = true;
+                        }
+                        else if (!cracked) {
+                            tekst("Please crack the server first.<br>");
+                        }
+                        $("#command_line").val("");
+                        break;
+						
+					case "run search.exe":
+                        tekst(input + "<br>");
+                        if (connected) {
+						 $("#command_line").val("");
+                            setTimeout(function () {
+                                tekst("<br> File not found! <br>");
+                            }, 2000);
+                            exploitran = true;
+                        }
+						else{
+						tekst("Please Connect to a server first!")
+						}
+                        break;
+						
+						case "scan 86.123.35.1":
+                        tekst(input + "<br>");
+                        if (decrypted && cracked && exploitran && !scanned) {
+                            tekst("63.234.112.9 appears on the map<br>");
+                            $(".tekst10").fadeIn(1000);
+                            scanned = true;
+                        }
+                        else if (scanned) {
+                            tekst("You have already scanned 86.123.35.1<br>");
+                        }
+
+
+                        else {
+                            tekst("Can't scan 86.123.35.1, have you decrypted cracked and ran search.exe?<br>");
+                        }
+                        break;
+						
+						case "disconnect 86.123.35.1":
+                        tekst(input + "<br>");
+                        if (decrypted && cracked && exploitran && scanned && !disconnect) {
+                            tekst("Disconnected from 86.123.35.1<br>");
+                            disconnect = true;
+                        }
+                        else if (scanned) {
+                            tekst("You have already disconnected from 86.123.35.1<br>");
+                        }
+
+
+                        else {
+                            tekst("Can't disconnect from 86.123.35.1, have you decrypted, cracked, ran search.exe and scanned?<br>");
+                        }
+                        break;
+
+						 case "crack 63.234.112.9":
+                        tekst(input + "<br>");
+                        if (disconnect && !cracked2) {
+							$("#command_line").val("");
+                            aadress2 = "63.234.112.9";
+                            setTimeout(function () {
+                                tekst("You have cracked " + aadress2 + "<br/>");
+                                nimi = "root@tptlive.ee:> ";
+                            }, 1000);
+                            cracked2 = true;
+                            trace += 10;
+                        }
+                        else if (cracked2) {
+                            tekst("You have already cracked " + aadress2 + "<br/>");
+                        }
+                        break;
+						
+						case "connect 63.234.112.9":
+                        tekst(input + "<br>");
+                        if (cracked2) {
+						$("#command_line").val("");
+                            setTimeout(function () {
+                                tekst("Connecting<br>");
+                            }, 1000);
+                            setTimeout(function () {
+                                tekst("<br>Welcome to 63.234.112.9 Admin <br> Please enter a command !: ");
+                            }, 2000);
+                            if (!hasalreadyconnected) {
+                                trace = 0;
+                            }
+							/*
+                            uih = setInterval(function () {
+                                trace += 2;
+
+                                $('.progress-bar').css('width', trace + '%').attr('aria.valuenow', trace);
+                                if (trace == 100) {
+                                    tekst("SA KAOTASID!!!");
+                                }
+                            }, 1000);
+*/
+                            connected2 = true;
+                        }
+                        else if (!cracked2) {
+                            tekst("Please crack the server first.<br>");
+                        }
+                        $("#command_line").val("");
+                        break;
+						
+					case "run search.exe":
+                        tekst(input + "<br>");
+                        if (connected2) {
+						 $("#command_line").val("");
+                            setTimeout(function () {
+                                tekst("<br> File not found!");
+                            }, 2000);
+                            exploitran2 = true;
+                        }
+						else{
+						tekst("Please Connect to a server first!")
+						}
+                        break;
+						
+						case "scan 63.234.112.9":
+                        tekst(input + "<br>");
+                        if (cracked2 && exploitran2 && !scanned2) {
+                            tekst("8.2.2.82 appears on the map<br>");
+                            $(".tekst11").fadeIn(1000);
+                            scanned2 = true;
+                        }
+                        else if (scanned2) {
+                            tekst("You have already scanned 86.123.35.1<br>");
+                        }
+
+
+                        else {
+                            tekst("Can't scan 63.123.35.1, have you decrypted cracked and ran search.exe?<br>");
+                        }
+                        break;
+						
+						case "disconnect 63.234.112.9":
+                        tekst(input + "<br>");
+                        if (cracked2 && exploitran2 && scanned2 && !disconnect2) {
+                            tekst("Disconnected from 86.123.35.1<br>");
+                            disconnect2 = true;
+                        }
+                        else if (scanned) {
+                            tekst("You have already disconnected from 63.234.112.9<br>");
+                        }
+
+
+                        else {
+                            tekst("Can't disconnect from 63.234.112.9, have you cracked, ran search.exe and scanned?<br>");
+                        }
+                    default:
+                        $("#command_line").val("");
+                        tekst(input + " is an unknown command<br>");
+                        break;
+                        
+                }
+                $("#command_line").val("");
+				break;
 
                 $("#command_line").val("");
                 $('.progress-bar').css('width' + trace + '%').attr('aria.valuenow' + trace);

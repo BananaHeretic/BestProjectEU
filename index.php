@@ -14,7 +14,6 @@
 </head>
 
 <body onload="trace()">
-<img src="gaben.jpg"id="gabe1">
 <!-- See alustab bootstrapi rea -->
 <div class="row">
 <!-- Teen tühja divi mille laius on 3 (bootstrap koosneb 12 osast, ehk siis algusest on 3/12 tühjust)-->
@@ -28,8 +27,7 @@
 Decrypted: No<br/>
 IP: 183.45.634.22
 </p>
-</div>
-<div class="col-xs-4 col-sm-4 col-lg-4">
+
 <p class="tekst">■ tptlive.ee</p>
 <p id="abc" class="description">
 Decrypted: Yes<br/>
@@ -51,11 +49,7 @@ IP: 87.248.202.103<br>
 Decryption Time: ~15s
 </p>
 
-<p class="tekst4">■ Valve</p>
-<p id="abc4" class="description">
-Location: USA<br/>
-IP: 90.100.3.235
-</p>
+
 
 <p class="CIA">■ CIA</p>
 <p id="CIA" class="description">
@@ -80,7 +74,17 @@ IP: 40.171.165.163
 Location: Khoroshevskoye shosse 76, Khodinka, Moscow <br/>
 IP: 154.56.27.8
 </p>
+<p class="tekst5">■ Pank</p>
+<p id="abc5" class="description">
+Location: Benin <br/>
+IP: 82.21.4.400
+</p>
 
+<p class="tekst4">■ Valve</p>
+<p id="abc4" class="description">
+Location: USA<br/>
+IP: 90.100.3.235
+</p>
 
 </div>
 <div class="col-xs-4 col-sm-4 col-lg-4"></div>
