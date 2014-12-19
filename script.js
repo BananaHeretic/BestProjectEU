@@ -14,7 +14,7 @@ $(document).ready(function () {
     var score = 0;
     var trace = 0;
     //level = tptlive; level2=nasa;level3=valve;level4=dosh
-    var level = 6;
+    var level = 4;
     var decrypted = false;
     var cracked = false;
     var scanned = false;
@@ -50,8 +50,13 @@ $(document).ready(function () {
         case 1:
 
             document.title = "Level 1 | Hacker Evolution";
+             $(".NASA").hide();
             $(".dreamhack").hide();
              $(".dosh").hide();
+             $(".CIA").hide();
+             $(".NSA").hide();
+             $(".SONY").hide();
+             $(".GRU").hide();
              $(".tekst5").hide();
              $(".tekst4").hide();
              $(".tekst3").hide();
@@ -65,12 +70,18 @@ $(document).ready(function () {
 
             document.title = "Level 2 | Hacker Evolution";
 
+$(".NASA").show();
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").show();
             $(".tekst2").hide();
             $(".tekst").hide();
-
+             $(".CIA").hide();
+             $(".NSA").hide();
+             $(".SONY").hide();
+             $(".GRU").hide();
+            $(".dreamhack").hide();
+             $(".dosh").hide();
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: einstein4324@wrftdy.com <br> SUBJECT: NASA <br> <br> Hallo, ich habe ein paar wichtige dokumente f?¼r die Forschung von der NASA ben?¶tigt. K?¶nnen Sie helfen? <br><br> TRANSLATION: <br><br> Hello, I need a few important documents for research from NASA. Can you help ?");
             break;
@@ -79,94 +90,136 @@ $(document).ready(function () {
 
             document.title = "Level 3 | Hacker Evolution";
 
+$(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").show();
             $(".tekst3").hide();
             $(".tekst2").hide();
             $(".tekst").hide();
-
+             $(".CIA").hide();
+             $(".NSA").hide();
+             $(".SONY").hide();
+             $(".GRU").hide();
+            $(".dreamhack").hide();
+             $(".dosh").hide();
+             
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <br> ElectronicArts@nohomo.com <br> SUBJECT: EA: <br> <br> Tervoi, me maksame sulle palju moni, et crackida Steami serveritesse sisse ja nende kontod t?¼hjaks teha!");
             break;
         case 4:
 
+
             document.title = "Level 4 | Hacker Evolution";
+            $(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
             $(".dreamhack").show();
             $(".dosh").hide();
             $(".tekst").hide();
+             $(".CIA").hide();
+             $(".NSA").hide();
+             $(".SONY").hide();
+             $(".GRU").hide();
+            
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br> Tere, mina soovin 25,000,000 EUR doshi.Palun v?µta see swadbankist, sest seal pole minul ?¼htegi kontot.");
             break;
                     case 5:
 
             document.title = "Level 5 | Hacker Evolution";
+            $(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
-            $(".dreamhack").show();
+            $(".dreamhack").hide();
             $(".dosh").hide();
             $(".tekst").hide();
+             $(".CIA").show();
+             $(".NSA").hide();
+             $(".SONY").hide();
+             $(".GRU").hide();
+             
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ru</span> <br> SUBJECT: CIA <br> <br> Tere, mina soovin CIA-st kõik Obama-ga seotud dokumenid saada. ")
             break;
                     case 6:
 
             document.title = "Level 6 | Hacker Evolution";
+            $(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
-            $(".dreamhack").show();
+            $(".dreamhack").hide();
             $(".dosh").hide();
             $(".tekst").hide();
+             $(".CIA").hide();
+             $(".NSA").show();
+             $(".SONY").hide();
+             $(".GRU").hide();
+            
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>VladimirPutin@russiarules.ee</span> <br> SUBJECT: NSA <br> <br> Hello i would like all NSA documents.");
             break;
                     case 7:
 
             document.title = "Level 7 | Hacker Evolution";
+            $(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
-            $(".dreamhack").show();
+            $(".dreamhack").hide();
             $(".dosh").hide();
             $(".tekst").hide();
+             $(".CIA").hide();
+             $(".NSA").hide();
+             $(".SONY").show();
+             $(".GRU").hide();
+            
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>KimJongUn@BestKorea.kr</span> <br> SUBJECT: URGENT <br> <br> Hello, I glorious leader would like you to leak Sony's servers")
             break;
                     case 8:
 
             document.title = "Level 8 | Hacker Evolution";
+            $(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
-            $(".dreamhack").show();
+            $(".dreamhack").hide();
             $(".dosh").hide();
             $(".tekst").hide();
+             $(".CIA").hide();
+             $(".NSA").hide();
+             $(".SONY").hide();
+             $(".GRU").show();
+            
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>Amoba@HeSueOhWit.com</span> <br> SUBJECT: GRU <br> <br> Hello, i would like to get all documents relating to Vladimir Putin from the GRU servers.");
             break;
                     case 9:
 
             document.title = "Level 9 | Hacker Evolution";
+            $(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
-            $(".dreamhack").show();
+            $(".dreamhack").hide();
             $(".dosh").hide();
             $(".tekst").hide();
             $("#placeholder").append('Type "help" to see a list of commands<br>');
             $("#info").html("FROM: <span id='md' style='font-weight:bold'>DoshMaster@Dosh.ee</span> <br> SUBJECT: Loadsa money <br> <br>");
             break;
+            document.title = "Level 10 | Hacker Evolution";
+            $(".tekst5").hide();
                     case 10:
 
             document.title = "Level 10 | Hacker Evolution";
+            $(".NASA").hide();
             $(".tekst5").hide();
             $(".tekst4").hide();
             $(".tekst3").hide();
-            $(".dreamhack").show();
+            $(".dreamhack").hide();
             $(".dosh").hide();
             $(".tekst").hide();
             $("#placeholder").append('Type "help" to see a list of commands<br>');

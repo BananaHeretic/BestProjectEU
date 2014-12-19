@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="kujundus.css">
 
 <meta charset="utf-8">
-<title>mäng</title>
 <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
 <script src="script.js"></script>
 
@@ -45,8 +44,8 @@ IP: 98.139.134.99
 Location: USA, Washington D.C <br/>
 IP: 68.142.243.103
 </p>
-<p class="tekst3">■ nasa.gov</p>
-<p id="abc3" class="description">
+<p class="NASA">■ nasa.gov</p>
+<p id="NASA" class="description">
 Location: USA, Washington D.C <br/>
 IP: 87.248.202.103<br>
 Decryption Time: ~15s
@@ -58,11 +57,31 @@ Location: USA<br/>
 IP: 90.100.3.235
 </p>
 
-<p class="tekst5">■ Pank</p>
-<p id="abc5" class="description">
-Location: Benin <br/>
-IP: 82.21.4.400
+<p class="CIA">■ CIA</p>
+<p id="CIA" class="description">
+Location:Langley, Virginia,USA<br/>
+IP: 241.12.195.101
 </p>
+
+<p class="NSA">■ NSA</p>
+<p id="NSA" class="description">
+Location: Fort Meade, Maryland, U.S. <br/>
+IP: 147.209.68.161
+</p>
+
+<p class="SONY">■ Sony</p>
+<p id="SONY" class="description">
+Location: Tokyo, Japan <br/>
+IP: 40.171.165.163
+</p>
+
+<p class="GRU">■ GRU</p>
+<p id="GRU" class="description">
+Location: Khoroshevskoye shosse 76, Khodinka, Moscow <br/>
+IP: 154.56.27.8
+</p>
+
+
 </div>
 <div class="col-xs-4 col-sm-4 col-lg-4"></div>
 </div>
